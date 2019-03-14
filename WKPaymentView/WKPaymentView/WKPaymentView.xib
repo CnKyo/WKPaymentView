@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WKPaymentView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-nn-HaF" customClass="WKPayTableView">
+                    <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qyb-DI-kAQ" customClass="WKPayTableView">
+                    <rect key="frame" x="375" y="222.5" width="375" height="444.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XhP-x8-V6a" customClass="WKPayTableView">
+                    <rect key="frame" x="750" y="222.5" width="375" height="444.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cRj-nn-HaF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="2:3" id="1OE-5r-CXH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cRj-nn-HaF" secondAttribute="bottom" id="DtE-Pi-3dj"/>
+                <constraint firstItem="Qyb-DI-kAQ" firstAttribute="leading" secondItem="cRj-nn-HaF" secondAttribute="trailing" id="EdB-dI-J5A"/>
+                <constraint firstItem="cRj-nn-HaF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="HPb-BC-rin"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cRj-nn-HaF" secondAttribute="trailing" id="Mlg-my-D4u"/>
+                <constraint firstItem="XhP-x8-V6a" firstAttribute="bottom" secondItem="Qyb-DI-kAQ" secondAttribute="bottom" id="XL6-s4-ayv"/>
+                <constraint firstItem="Qyb-DI-kAQ" firstAttribute="bottom" secondItem="cRj-nn-HaF" secondAttribute="bottom" id="YPF-v7-2R1"/>
+                <constraint firstItem="Qyb-DI-kAQ" firstAttribute="top" secondItem="cRj-nn-HaF" secondAttribute="top" id="eq8-lN-Csz"/>
+                <constraint firstItem="XhP-x8-V6a" firstAttribute="width" secondItem="Qyb-DI-kAQ" secondAttribute="width" id="ite-LX-3Oz"/>
+                <constraint firstItem="Qyb-DI-kAQ" firstAttribute="width" secondItem="cRj-nn-HaF" secondAttribute="width" id="jM1-9f-v1h"/>
+                <constraint firstItem="XhP-x8-V6a" firstAttribute="leading" secondItem="Qyb-DI-kAQ" secondAttribute="trailing" id="kWg-9A-Ohe"/>
+                <constraint firstItem="XhP-x8-V6a" firstAttribute="top" secondItem="Qyb-DI-kAQ" secondAttribute="top" id="nHe-6l-Ni7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="mLeftTableView" destination="cRj-nn-HaF" id="4aF-WM-8cu"/>
+                <outlet property="mMidTableView" destination="Qyb-DI-kAQ" id="3Fy-Pt-fsc"/>
+                <outlet property="mRightTableView" destination="XhP-x8-V6a" id="hDQ-gW-wi9"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="129"/>
+        </view>
+    </objects>
+</document>

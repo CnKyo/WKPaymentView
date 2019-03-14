@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E21223A539F00B28C44 /* AGWindowView.m */; };
+		186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E24223A727100B28C44 /* WKPayTableView.m */; };
+		186E0E27223A727B00B28C44 /* WKPayTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E0E26223A727B00B28C44 /* WKPayTableView.xib */; };
+		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
+		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
+		18D0711B2238F48600B16840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D071192238F48600B16840 /* Main.storyboard */; };
+		18D0711D2238F48800B16840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D0711C2238F48800B16840 /* Assets.xcassets */; };
+		18D071202238F48800B16840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D0711E2238F48800B16840 /* LaunchScreen.storyboard */; };
+		18D071232238F48800B16840 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071222238F48800B16840 /* main.m */; };
+		18D0712D2238F48800B16840 /* WKPaymentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D0712C2238F48800B16840 /* WKPaymentViewTests.m */; };
+		18D071382238F48800B16840 /* WKPaymentViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071372238F48800B16840 /* WKPaymentViewUITests.m */; };
+		18D071472238F4E800B16840 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071462238F4E800B16840 /* SecondViewController.m */; };
+		18D0714D2238F55E00B16840 /* WKPaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D0714C2238F55E00B16840 /* WKPaymentView.m */; };
+		18D0714F2238F56800B16840 /* WKPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D0714E2238F56800B16840 /* WKPaymentView.xib */; };
+		18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071562238FFDD00B16840 /* WKPaymentDetailCell.m */; };
+		18D071592238FFDD00B16840 /* WKPaymentDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D071572238FFDD00B16840 /* WKPaymentDetailCell.xib */; };
+		18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D0715B223901E100B16840 /* WKPaymentMethodCell.m */; };
+		18D0715E223901E100B16840 /* WKPaymentMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D0715C223901E100B16840 /* WKPaymentMethodCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18D071292238F48800B16840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D071082238F48600B16840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18D0710F2238F48600B16840;
+			remoteInfo = WKPaymentView;
+		};
+		18D071342238F48800B16840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18D071082238F48600B16840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18D0710F2238F48600B16840;
+			remoteInfo = WKPaymentView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		186E0E1F223A539F00B28C44 /* AGWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowView.h; sourceTree = "<group>"; };
+		186E0E20223A539F00B28C44 /* AGWindowViewDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowViewDefines.h; sourceTree = "<group>"; };
+		186E0E21223A539F00B28C44 /* AGWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowView.m; sourceTree = "<group>"; };
+		186E0E23223A727100B28C44 /* WKPayTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPayTableView.h; sourceTree = "<group>"; };
+		186E0E24223A727100B28C44 /* WKPayTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPayTableView.m; sourceTree = "<group>"; };
+		186E0E26223A727B00B28C44 /* WKPayTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPayTableView.xib; sourceTree = "<group>"; };
+		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D071132238F48600B16840 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18D071142238F48600B16840 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18D071162238F48600B16840 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18D071172238F48600B16840 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18D0711A2238F48600B16840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18D0711C2238F48800B16840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18D0711F2238F48800B16840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18D071212238F48800B16840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D071222238F48800B16840 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18D071282238F48800B16840 /* WKPaymentViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKPaymentViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D0712C2238F48800B16840 /* WKPaymentViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentViewTests.m; sourceTree = "<group>"; };
+		18D0712E2238F48800B16840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D071332238F48800B16840 /* WKPaymentViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKPaymentViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18D071372238F48800B16840 /* WKPaymentViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentViewUITests.m; sourceTree = "<group>"; };
+		18D071392238F48800B16840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D071452238F4E800B16840 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		18D071462238F4E800B16840 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		18D0714B2238F55E00B16840 /* WKPaymentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentView.h; sourceTree = "<group>"; };
+		18D0714C2238F55E00B16840 /* WKPaymentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentView.m; sourceTree = "<group>"; };
+		18D0714E2238F56800B16840 /* WKPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymentView.xib; sourceTree = "<group>"; };
+		18D071552238FFDD00B16840 /* WKPaymentDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentDetailCell.h; sourceTree = "<group>"; };
+		18D071562238FFDD00B16840 /* WKPaymentDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentDetailCell.m; sourceTree = "<group>"; };
+		18D071572238FFDD00B16840 /* WKPaymentDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymentDetailCell.xib; sourceTree = "<group>"; };
+		18D0715A223901E100B16840 /* WKPaymentMethodCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentMethodCell.h; sourceTree = "<group>"; };
+		18D0715B223901E100B16840 /* WKPaymentMethodCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentMethodCell.m; sourceTree = "<group>"; };
+		18D0715C223901E100B16840 /* WKPaymentMethodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymentMethodCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18D0710D2238F48600B16840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D071252238F48800B16840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D071302238F48800B16840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		186E0E1E223A539F00B28C44 /* AGWindowView */ = {
+			isa = PBXGroup;
+			children = (
+				186E0E1F223A539F00B28C44 /* AGWindowView.h */,
+				186E0E21223A539F00B28C44 /* AGWindowView.m */,
+				186E0E20223A539F00B28C44 /* AGWindowViewDefines.h */,
+			);
+			path = AGWindowView;
+			sourceTree = "<group>";
+		};
+		18D071072238F48600B16840 = {
+			isa = PBXGroup;
+			children = (
+				18D071122238F48600B16840 /* WKPaymentView */,
+				18D0712B2238F48800B16840 /* WKPaymentViewTests */,
+				18D071362238F48800B16840 /* WKPaymentViewUITests */,
+				18D071112238F48600B16840 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18D071112238F48600B16840 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18D071102238F48600B16840 /* WKPaymentView.app */,
+				18D071282238F48800B16840 /* WKPaymentViewTests.xctest */,
+				18D071332238F48800B16840 /* WKPaymentViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18D071122238F48600B16840 /* WKPaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				18D071132238F48600B16840 /* AppDelegate.h */,
+				18D071142238F48600B16840 /* AppDelegate.m */,
+				18D071162238F48600B16840 /* ViewController.h */,
+				18D071172238F48600B16840 /* ViewController.m */,
+				18D071452238F4E800B16840 /* SecondViewController.h */,
+				18D071462238F4E800B16840 /* SecondViewController.m */,
+				186E0E1E223A539F00B28C44 /* AGWindowView */,
+				18D071482238F52A00B16840 /* WKPaymentView */,
+				18D071192238F48600B16840 /* Main.storyboard */,
+				18D0711C2238F48800B16840 /* Assets.xcassets */,
+				18D0711E2238F48800B16840 /* LaunchScreen.storyboard */,
+				18D071212238F48800B16840 /* Info.plist */,
+				18D071222238F48800B16840 /* main.m */,
+			);
+			path = WKPaymentView;
+			sourceTree = "<group>";
+		};
+		18D0712B2238F48800B16840 /* WKPaymentViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				18D0712C2238F48800B16840 /* WKPaymentViewTests.m */,
+				18D0712E2238F48800B16840 /* Info.plist */,
+			);
+			path = WKPaymentViewTests;
+			sourceTree = "<group>";
+		};
+		18D071362238F48800B16840 /* WKPaymentViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18D071372238F48800B16840 /* WKPaymentViewUITests.m */,
+				18D071392238F48800B16840 /* Info.plist */,
+			);
+			path = WKPaymentViewUITests;
+			sourceTree = "<group>";
+		};
+		18D071482238F52A00B16840 /* WKPaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				18D0714B2238F55E00B16840 /* WKPaymentView.h */,
+				18D0714C2238F55E00B16840 /* WKPaymentView.m */,
+				18D0714E2238F56800B16840 /* WKPaymentView.xib */,
+				186E0E23223A727100B28C44 /* WKPayTableView.h */,
+				186E0E24223A727100B28C44 /* WKPayTableView.m */,
+				186E0E26223A727B00B28C44 /* WKPayTableView.xib */,
+				18D071492238F54400B16840 /* Views */,
+				18D0714A2238F54B00B16840 /* Model */,
+			);
+			path = WKPaymentView;
+			sourceTree = "<group>";
+		};
+		18D071492238F54400B16840 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18D071552238FFDD00B16840 /* WKPaymentDetailCell.h */,
+				18D071562238FFDD00B16840 /* WKPaymentDetailCell.m */,
+				18D071572238FFDD00B16840 /* WKPaymentDetailCell.xib */,
+				18D0715A223901E100B16840 /* WKPaymentMethodCell.h */,
+				18D0715B223901E100B16840 /* WKPaymentMethodCell.m */,
+				18D0715C223901E100B16840 /* WKPaymentMethodCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18D0714A2238F54B00B16840 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18D0710F2238F48600B16840 /* WKPaymentView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D0713C2238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentView" */;
+			buildPhases = (
+				18D0710C2238F48600B16840 /* Sources */,
+				18D0710D2238F48600B16840 /* Frameworks */,
+				18D0710E2238F48600B16840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WKPaymentView;
+			productName = WKPaymentView;
+			productReference = 18D071102238F48600B16840 /* WKPaymentView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18D071272238F48800B16840 /* WKPaymentViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D0713F2238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentViewTests" */;
+			buildPhases = (
+				18D071242238F48800B16840 /* Sources */,
+				18D071252238F48800B16840 /* Frameworks */,
+				18D071262238F48800B16840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18D0712A2238F48800B16840 /* PBXTargetDependency */,
+			);
+			name = WKPaymentViewTests;
+			productName = WKPaymentViewTests;
+			productReference = 18D071282238F48800B16840 /* WKPaymentViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		18D071322238F48800B16840 /* WKPaymentViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18D071422238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentViewUITests" */;
+			buildPhases = (
+				18D0712F2238F48800B16840 /* Sources */,
+				18D071302238F48800B16840 /* Frameworks */,
+				18D071312238F48800B16840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18D071352238F48800B16840 /* PBXTargetDependency */,
+			);
+			name = WKPaymentViewUITests;
+			productName = WKPaymentViewUITests;
+			productReference = 18D071332238F48800B16840 /* WKPaymentViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18D071082238F48600B16840 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = apple;
+				TargetAttributes = {
+					18D0710F2238F48600B16840 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					18D071272238F48800B16840 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 18D0710F2238F48600B16840;
+					};
+					18D071322238F48800B16840 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 18D0710F2238F48600B16840;
+					};
+				};
+			};
+			buildConfigurationList = 18D0710B2238F48600B16840 /* Build configuration list for PBXProject "WKPaymentView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18D071072238F48600B16840;
+			productRefGroup = 18D071112238F48600B16840 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18D0710F2238F48600B16840 /* WKPaymentView */,
+				18D071272238F48800B16840 /* WKPaymentViewTests */,
+				18D071322238F48800B16840 /* WKPaymentViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18D0710E2238F48600B16840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D071202238F48800B16840 /* LaunchScreen.storyboard in Resources */,
+				18D0714F2238F56800B16840 /* WKPaymentView.xib in Resources */,
+				18D0711D2238F48800B16840 /* Assets.xcassets in Resources */,
+				18D0715E223901E100B16840 /* WKPaymentMethodCell.xib in Resources */,
+				18D0711B2238F48600B16840 /* Main.storyboard in Resources */,
+				186E0E27223A727B00B28C44 /* WKPayTableView.xib in Resources */,
+				18D071592238FFDD00B16840 /* WKPaymentDetailCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D071262238F48800B16840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D071312238F48800B16840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18D0710C2238F48600B16840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */,
+				18D071472238F4E800B16840 /* SecondViewController.m in Sources */,
+				18D071182238F48600B16840 /* ViewController.m in Sources */,
+				18D0714D2238F55E00B16840 /* WKPaymentView.m in Sources */,
+				186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */,
+				186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */,
+				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
+				18D071232238F48800B16840 /* main.m in Sources */,
+				18D071152238F48600B16840 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D071242238F48800B16840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D0712D2238F48800B16840 /* WKPaymentViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18D0712F2238F48800B16840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18D071382238F48800B16840 /* WKPaymentViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18D0712A2238F48800B16840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18D0710F2238F48600B16840 /* WKPaymentView */;
+			targetProxy = 18D071292238F48800B16840 /* PBXContainerItemProxy */;
+		};
+		18D071352238F48800B16840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18D0710F2238F48600B16840 /* WKPaymentView */;
+			targetProxy = 18D071342238F48800B16840 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18D071192238F48600B16840 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D0711A2238F48600B16840 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18D0711E2238F48800B16840 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18D0711F2238F48800B16840 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18D0713A2238F48800B16840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18D0713B2238F48800B16840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18D0713D2238F48800B16840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18D0713E2238F48800B16840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		18D071402238F48800B16840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKPaymentView.app/WKPaymentView";
+			};
+			name = Debug;
+		};
+		18D071412238F48800B16840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKPaymentView.app/WKPaymentView";
+			};
+			name = Release;
+		};
+		18D071432238F48800B16840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WKPaymentView;
+			};
+			name = Debug;
+		};
+		18D071442238F48800B16840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WKPaymentViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenling.ltd.WKPaymentViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WKPaymentView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18D0710B2238F48600B16840 /* Build configuration list for PBXProject "WKPaymentView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D0713A2238F48800B16840 /* Debug */,
+				18D0713B2238F48800B16840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18D0713C2238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D0713D2238F48800B16840 /* Debug */,
+				18D0713E2238F48800B16840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18D0713F2238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D071402238F48800B16840 /* Debug */,
+				18D071412238F48800B16840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18D071422238F48800B16840 /* Build configuration list for PBXNativeTarget "WKPaymentViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D071432238F48800B16840 /* Debug */,
+				18D071442238F48800B16840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18D071082238F48600B16840 /* Project object */;
+}
