@@ -20,6 +20,8 @@
 		186FE880223CD91A00CFE043 /* WKPaymentDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186FE87E223CD91A00CFE043 /* WKPaymentDefaultCell.xib */; };
 		186FE883223CDAC200CFE043 /* WKPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE882223CDAC200CFE043 /* WKPaymentModel.m */; };
 		186FE8B5223D09A800CFE043 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186FE8B4223D09A700CFE043 /* libsqlite3.tbd */; };
+		186FE8BA223D12E600CFE043 /* WKPaymenMethodSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE8B8223D12E600CFE043 /* WKPaymenMethodSubCell.m */; };
+		186FE8BB223D12E600CFE043 /* WKPaymenMethodSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186FE8B9223D12E600CFE043 /* WKPaymenMethodSubCell.xib */; };
 		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
@@ -82,6 +84,9 @@
 		186FE881223CDAC200CFE043 /* WKPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentModel.h; sourceTree = "<group>"; };
 		186FE882223CDAC200CFE043 /* WKPaymentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentModel.m; sourceTree = "<group>"; };
 		186FE8B4223D09A700CFE043 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		186FE8B7223D12E600CFE043 /* WKPaymenMethodSubCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymenMethodSubCell.h; sourceTree = "<group>"; };
+		186FE8B8223D12E600CFE043 /* WKPaymenMethodSubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymenMethodSubCell.m; sourceTree = "<group>"; };
+		186FE8B9223D12E600CFE043 /* WKPaymenMethodSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymenMethodSubCell.xib; sourceTree = "<group>"; };
 		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +182,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		186FE8B6223D12CD00CFE043 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				186FE8B7223D12E600CFE043 /* WKPaymenMethodSubCell.h */,
+				186FE8B8223D12E600CFE043 /* WKPaymenMethodSubCell.m */,
+				186FE8B9223D12E600CFE043 /* WKPaymenMethodSubCell.xib */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		18D071072238F48600B16840 = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +282,7 @@
 				18D0715A223901E100B16840 /* WKPaymentMethodCell.h */,
 				18D0715B223901E100B16840 /* WKPaymentMethodCell.m */,
 				18D0715C223901E100B16840 /* WKPaymentMethodCell.xib */,
+				186FE8B6223D12CD00CFE043 /* SubViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +401,7 @@
 			files = (
 				18D071202238F48800B16840 /* LaunchScreen.storyboard in Resources */,
 				18D0714F2238F56800B16840 /* WKPaymentView.xib in Resources */,
+				186FE8BB223D12E600CFE043 /* WKPaymenMethodSubCell.xib in Resources */,
 				18D0711D2238F48800B16840 /* Assets.xcassets in Resources */,
 				18D0715E223901E100B16840 /* WKPaymentMethodCell.xib in Resources */,
 				18D0711B2238F48600B16840 /* Main.storyboard in Resources */,
@@ -429,6 +446,7 @@
 				18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */,
 				186FE876223CCA5200CFE043 /* YHPDFImagePath.m in Sources */,
 				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
+				186FE8BA223D12E600CFE043 /* WKPaymenMethodSubCell.m in Sources */,
 				186FE883223CDAC200CFE043 /* WKPaymentModel.m in Sources */,
 				18D071232238F48800B16840 /* main.m in Sources */,
 				18D071152238F48600B16840 /* AppDelegate.m in Sources */,
