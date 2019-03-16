@@ -10,6 +10,7 @@
 		186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E21223A539F00B28C44 /* AGWindowView.m */; };
 		186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E24223A727100B28C44 /* WKPayTableView.m */; };
 		186E0E27223A727B00B28C44 /* WKPayTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E0E26223A727B00B28C44 /* WKPayTableView.xib */; };
+		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
 		18D0711B2238F48600B16840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D071192238F48600B16840 /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		186E0E23223A727100B28C44 /* WKPayTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPayTableView.h; sourceTree = "<group>"; };
 		186E0E24223A727100B28C44 /* WKPayTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPayTableView.m; sourceTree = "<group>"; };
 		186E0E26223A727B00B28C44 /* WKPayTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPayTableView.xib; sourceTree = "<group>"; };
+		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D071132238F48600B16840 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18D071142238F48600B16840 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				18D071172238F48600B16840 /* ViewController.m */,
 				18D071452238F4E800B16840 /* SecondViewController.h */,
 				18D071462238F4E800B16840 /* SecondViewController.m */,
+				18CF7507223B3EC600605958 /* ThirdViewController.h */,
+				18CF7508223B3EC600605958 /* ThirdViewController.m */,
 				186E0E1E223A539F00B28C44 /* AGWindowView */,
 				18D071482238F52A00B16840 /* WKPaymentView */,
 				18D071192238F48600B16840 /* Main.storyboard */,
@@ -348,6 +353,7 @@
 				18D0714D2238F55E00B16840 /* WKPaymentView.m in Sources */,
 				186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */,
 				186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */,
+				18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */,
 				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
 				18D071232238F48800B16840 /* main.m in Sources */,
 				18D071152238F48600B16840 /* AppDelegate.m in Sources */,

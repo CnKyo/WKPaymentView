@@ -54,6 +54,9 @@
     WKPaymentDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.mBtnBlock = ^(NSInteger mIndex) {
+        if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
+            [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mIndex];
+        }
         
     };
     return cell;

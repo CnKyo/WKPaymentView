@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WKPaymentView.h"
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol WKPayTableViewDidBtnClickDelegate <NSObject>
+
+@optional
+
+- (void)WKPayTableViewPaymentDetailDidClicked:(NSInteger)mTag;
+
+@end
 
 @interface WKPayTableView : UIView<UITableViewDelegate,UITableViewDataSource>
 
@@ -16,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
+@property (weak,nonatomic) id<WKPayTableViewDidBtnClickDelegate> delegate;
 
 @end
 

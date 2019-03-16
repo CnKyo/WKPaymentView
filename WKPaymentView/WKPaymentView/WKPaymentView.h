@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WKPayTableView.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
@@ -15,8 +16,20 @@ typedef enum : NSUInteger {
     WKPaymentDefault,
     ///支付详情类型
     WKPaymentDetail,
+    ///SPG类型
+    WKPaymentSPGDetail,
+    ///汇款类型
+    WKPaymentRemiitanceDetail,
+    ///跨境支付类型
+    WKPaymentCrossBorderDetail,
+    ///优惠卷类型
+    WKPaymentCouponDetail,
     ///支付方式类型
     WKPaymentMethod,
+    ///输入支付密码
+    WKPaymentInputPINCode,
+    ///设置支付密码
+    WKSetPaymentPIN,
     ///支付中类型
     WKPaymenting,
 } WKPaymentType;///支付类型
@@ -28,28 +41,44 @@ typedef enum : NSUInteger {
     WKPayTableViewDisPlayRight,
 } WKPayTableViewDisPlayType;
 
+
+typedef void(^WKPaymentDetailViewClick)(NSInteger mTag);
+
+
 @interface WKPaymentView : UIView
+#pragma mark----****----回调方法⬇️
+@property (copy,nonatomic) WKPaymentDetailViewClick WKPayDetailViewHandle;
+#pragma mark----****----回调方法⬆️
 
 /**
  数据源
  */
 @property (nonatomic,strong) NSMutableArray *mDataSource;
 
+@property (nonatomic, strong) UIView *mNavMaskView;
+
+@property (weak, nonatomic) IBOutlet UIView *mMaskView;
+
 /**
  最左边的tableview
  */
-@property (weak, nonatomic) IBOutlet WKPayTableView *mLeftTableView;
+@property (weak, nonatomic) IBOutlet UIView *mLeftTableView;
 
 /**
  中间的tableView
  */
-@property (weak, nonatomic) IBOutlet WKPayTableView *mMidTableView;
+@property (weak, nonatomic) IBOutlet UIView *mMidTableView;
 
 /**
  最右边的tableView
  */
-@property (weak, nonatomic) IBOutlet WKPayTableView *mRightTableView;
+@property (weak, nonatomic) IBOutlet UIView *mRightTableView;
 
+@property (strong,nonatomic) WKPayTableView *mLeftPayTableView;
+
+@property (strong,nonatomic) WKPayTableView *mMidPayTableView;
+
+@property (strong,nonatomic) WKPayTableView *mRightPayTableView;
 
 @property (assign,nonatomic) WKPaymentType mPayViewType;
 
@@ -68,11 +97,6 @@ typedef enum : NSUInteger {
  @param VC 显示到当前ViewController
  */
 - (void)WKShowPaymentViewInVC:(UIViewController *)VC;
-
-/**
- 显示方法(显示到当前window)
- */
-- (void)WKShowPaymentViewInWindow;
 
 /**
  隐藏支付view(只是hidden并非移除)
@@ -115,7 +139,10 @@ typedef enum : NSUInteger {
  */
 - (void)WKMidToLeft;
 
-
+#pragma mark----****----添加导航条蒙层view
+- (void)WKAddNavMaskView;
+#pragma mark----****----移除导航条蒙层view
+- (void)WKRemoveNavMaskView;
 @end
 
 NS_ASSUME_NONNULL_END
