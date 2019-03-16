@@ -1,0 +1,63 @@
+//
+//  Header.pch
+//  WKPaymentView
+//
+//  Created by apple on 16/03/2019.
+//  Copyright © 2019 apple. All rights reserved.
+//
+
+#ifndef Header_pch
+#define Header_pch
+
+
+#import "UIImage+YHPDFIcon.h"
+#import "WKPaymentModel.h"
+
+
+#define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeight   [[UIScreen mainScreen] bounds].size.height
+
+#define KRBGColorAlpha(_R_, _G_, _B_,_Alpha_)       ([UIColor colorWithRed:_R_/255.0f green:_G_/255.0f blue:_B_/255.0f alpha:_Alpha_])
+#define kStatusBarHeight        CGRectGetHeight([[UIApplication sharedApplication] statusBarFrame])
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+typedef enum : NSUInteger {
+    ///默认类型
+    WKPaymentDefault = 0,
+    ///支付详情类型
+    WKPaymentDetail = 1,
+    ///SPG类型
+    WKPaymentSPGDetail = 2,
+    ///汇款类型
+    WKPaymentRemiitanceDetail = 3,
+    ///跨境支付类型
+    WKPaymentCrossBorderDetail = 4,
+    ///优惠卷类型
+    WKPaymentCouponDetail = 5,
+    ///支付方式类型
+    WKPaymentMethod = 6,
+    ///输入支付密码
+    WKPaymentInputPINCode = 7,
+    ///设置支付密码
+    WKSetPaymentPIN = 8,
+    ///支付中类型
+    WKPaymenting = 9,
+} WKPaymentType;///支付类型
+
+typedef enum : NSUInteger {
+    ///左边的图片
+    WKPaymentLeftImageModel = 0,
+    ///选择支付方式
+    WKPaymentSelectPayMethodModel = 1,
+    ///选择优惠卷
+    WKPaymentSelectCouponModel = 2,
+    ///忘记支付密码
+    WKPaymentForgetPINModel = 3,
+    ///去支付按钮
+    WKPaymentGoPayModel = 4,
+} WKPaymentBtnModel;///支付控件按钮类型
+
+#endif /* Header_pch */

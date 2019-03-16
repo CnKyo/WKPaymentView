@@ -31,10 +31,11 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6is-Yn-sYa">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="52"/>
-                                <color key="backgroundColor" red="0.22352941179999999" green="0.81960784310000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="jeU-tv-vWT"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -71,14 +72,45 @@
                             <constraint firstItem="gtb-3b-8cT" firstAttribute="centerX" secondItem="L4m-Py-F4p" secondAttribute="centerX" id="uwp-G3-cBk"/>
                         </constraints>
                     </view>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkP-Sm-gCv">
+                        <rect key="frame" x="0.0" y="53" width="320" height="335.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
+                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyZ-iI-Eoh">
+                        <rect key="frame" x="4" y="393.5" width="312" height="42"/>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.81960784310000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uyZ-iI-Eoh" secondAttribute="height" multiplier="52:7" id="mVL-A2-FFb"/>
+                        </constraints>
+                        <state key="normal" title="PAY">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="mBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xds-qV-F0n"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="gkP-Sm-gCv" firstAttribute="top" secondItem="L4m-Py-F4p" secondAttribute="bottom" id="8tv-PF-RAC"/>
                     <constraint firstItem="L4m-Py-F4p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KFc-ng-Xiv"/>
+                    <constraint firstItem="uyZ-iI-Eoh" firstAttribute="top" secondItem="gkP-Sm-gCv" secondAttribute="bottom" constant="5" id="QJW-4b-usy"/>
+                    <constraint firstItem="uyZ-iI-Eoh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="ZfS-EP-ncq"/>
+                    <constraint firstAttribute="trailing" secondItem="gkP-Sm-gCv" secondAttribute="trailing" id="chb-wQ-1Ny"/>
+                    <constraint firstAttribute="trailing" secondItem="uyZ-iI-Eoh" secondAttribute="trailing" constant="4" id="lMU-1K-fYZ"/>
+                    <constraint firstAttribute="bottom" secondItem="uyZ-iI-Eoh" secondAttribute="bottom" constant="4" id="lNl-pM-QJA"/>
                     <constraint firstAttribute="trailing" secondItem="L4m-Py-F4p" secondAttribute="trailing" id="nFr-a1-GAp"/>
+                    <constraint firstItem="gkP-Sm-gCv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uVu-ZU-Avw"/>
                     <constraint firstItem="L4m-Py-F4p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zCD-t3-Iay"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="mGoPayBtn" destination="uyZ-iI-Eoh" id="aEU-r6-KXR"/>
+                <outlet property="mLeftBtn" destination="6is-Yn-sYa" id="Fss-j6-be2"/>
+                <outlet property="mLeftImage" destination="vpN-aJ-YH2" id="hgT-9S-clD"/>
+                <outlet property="mTableView" destination="gkP-Sm-gCv" id="1tK-Tj-2QX"/>
+                <outlet property="mTitle" destination="gtb-3b-8cT" id="HPr-uS-bW8"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

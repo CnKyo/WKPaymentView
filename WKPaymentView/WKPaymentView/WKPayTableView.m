@@ -7,7 +7,7 @@
 //
 
 #import "WKPayTableView.h"
-
+#import "WKPaymentDefaultCell.h"
 #import "WKPaymentDetailCell.h"
 #import "WKPaymentMethodCell.h"
 
@@ -26,16 +26,21 @@
 */
 + (WKPayTableView *)initView{
     WKPayTableView *view = [[[NSBundle mainBundle] loadNibNamed:@"WKPayTableView" owner:self options:nil] objectAtIndex:0];
+    
     view.mTableView.delegate = view;
     view.mTableView.dataSource = view;
     view.mTableView.scrollEnabled = NO;
     
-    
-    UINib   *nib = [UINib nibWithNibName:@"WKPaymentDetailCell" bundle:nil];
-    [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentDetailCell"];
+    ///默认ui
+    UINib   *nib = [UINib nibWithNibName:@"WKPaymentDefaultCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"defaultCell"];
     
     nib = [UINib nibWithNibName:@"WKPaymentDetailCell" bundle:nil];
     [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentDetailCell"];
+    
+    nib = [UINib nibWithNibName:@"WKPaymentMethodCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentMethodCell"];
+
     
     return view;
 }
@@ -48,29 +53,43 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     __weak typeof(self) weakSelf = self;
-    
+    self.mPayViewType = [[[NSUserDefaults standardUserDefaults]valueForKey:@"type"] integerValue];
+
     static NSString *string = @"paymentDetailCell";
-    string = @"paymentDetailCell";
-    WKPaymentDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.mBtnBlock = ^(NSInteger mIndex) {
-        if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
-            [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mIndex];
-        }
-        
-    };
-    return cell;
-    //    }
-    //    else if (tableView == self.mMidTableView) {
-    //        string = @"paymentMethodCell";
-    //        WKPaymentMethodCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
-    //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //        cell.mBtnBlock = ^(NSInteger mIndex) {
-    //
-    //
-    //        };
-    //        return cell;
-    //    }
+    if (self.mPayViewType == WKPaymentDetail) {
+        string = @"paymentDetailCell";
+        WKPaymentDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.mBtnBlock = ^(WKPaymentBtnModel mIndex) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mIndex];
+            }
+
+        };
+        return cell;
+    }
+    else if (self.mPayViewType == WKPaymentMethod){
+        string = @"paymentMethodCell";
+        WKPaymentMethodCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.mBtnBlock = ^(WKPaymentBtnModel mIndex) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentMethodDidClicked:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentMethodDidClicked:mIndex];
+            }
+
+        };
+        return cell;
+    }
+    else{
+
+        string = @"defaultCell";
+        WKPaymentDefaultCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        return cell;
+    }
+
+
    
 }
 
@@ -81,5 +100,22 @@
     
     return mFrame.size.height*0.67;
 }
+#pragma mark----****----传递方法
+- (void)WKShowPaymentDetail:(WKPaymentModel *)model{
+    self.model = model;
+ 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymentDetail] forKey:@"type"];
+    
+    [self.mTableView reloadData];
+}
+- (void)WKShowPaymentMethod:(WKPaymentModel *)model{
+    self.model = model;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymentMethod] forKey:@"type"];
 
+    
+    [self.mTableView reloadData];
+}
 @end

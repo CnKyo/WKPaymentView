@@ -14,7 +14,12 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+//    self.mTableView.delegate = self;
+//    self.mTableView.dataSource = self;
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

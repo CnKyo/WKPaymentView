@@ -54,7 +54,6 @@
     [view.mRightTableView addSubview:view.mRightPayTableView];
     
     
-    
     return view;
     
 }
@@ -64,13 +63,13 @@
  @param VC 显示到当前ViewController
  */
 - (void)WKShowPaymentViewInVC:(UIViewController *)VC{
-    [self WKAddNavMaskView];
+//    [self WKAddNavMaskView];
     self.mMaskView.alpha = 0;
 
     CGRect mFrame = [UIApplication sharedApplication].keyWindow.bounds;
     mFrame.origin.y = kScreenHeight;
     self.frame = mFrame;
-    [VC.view addSubview:self];
+    [VC.view.window addSubview:self];
     [UIView animateWithDuration:0.5 animations:^{
         CGRect mTotleFrame = self.frame;
         mTotleFrame.origin.y = 0;
@@ -245,12 +244,17 @@
 
 
 #pragma mark----****----列表点击的代理方法
-- (void)WKPayTableViewPaymentDetailDidClicked:(NSInteger)mTag{
+- (void)WKPayTableViewPaymentDetailDidClicked:(WKPaymentBtnModel)mTag{
 //    [self WKLeftToMid];
     if (self.WKPayDetailViewHandle) {
         self.WKPayDetailViewHandle(mTag);
     }
     
+}
+- (void)WKPayTableViewPaymentMethodDidClicked:(WKPaymentBtnModel)mTag{
+    if (self.WKPayMethodViewHandle) {
+        self.WKPayMethodViewHandle(mTag);
+    }
 }
 
 #pragma mark----****----添加导航条蒙层view
@@ -265,4 +269,19 @@
 - (void)WKRemoveNavMaskView{
     [self.mNavMaskView removeFromSuperview];
 }
+
+
+#pragma mark----****----传递方法
+- (void)WKShowPaymentDetail:(WKPaymentModel *)model{
+    
+    [self WKMidToLeft];
+    [self.mMidPayTableView WKShowPaymentDetail:model];
+}
+- (void)WKShowPaymentMethod:(WKPaymentModel *)model{
+    
+    [self WKLeftToMid];
+    [self.mMidPayTableView WKShowPaymentMethod:model];
+
+}
+
 @end

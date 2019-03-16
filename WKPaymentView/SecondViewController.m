@@ -25,10 +25,33 @@
     __weak typeof(self) weakSelf = self;
     
     self.mPayView = [WKPaymentView initView];
-    [self.mPayView loadDetail];
-
     [self.mPayView WKShowPaymentViewInVC:self];
-    self.mPayView.WKPayDetailViewHandle = ^(NSInteger mTag) {
+
+    WKPaymentModel *model = [WKPaymentModel new];
+    model.mTitle = @"这是标题";
+    [self.mPayView WKShowPaymentDetail:model];
+
+    self.mPayView.WKPayDetailViewHandle = ^(WKPaymentBtnModel mTag) {
+        switch (mTag) {
+            case WKPaymentGoPayModel:
+            {
+                [weakSelf.mPayView WKRemovePaymentView];
+            }
+                break;
+            case WKPaymentLeftImageModel:
+            {
+                [weakSelf.mPayView WKRemovePaymentView];
+            }
+                break;
+            case WKPaymentSelectPayMethodModel:
+            {
+                [weakSelf.mPayView WKShowPaymentMethod:nil];
+
+            }
+                break;
+            default:
+                break;
+        }
 //        [weakSelf.mPayView WKHiddenPaymentView:YES];
 //
 //        ThirdViewController *vc = [ThirdViewController new];
@@ -39,10 +62,26 @@
 //        };
 //
 //        [weakSelf.navigationController pushViewController:vc animated:YES];
-        [weakSelf.mPayView WKLeftToMid];
+        
 
     };
-    
+    self.mPayView.WKPayMethodViewHandle = ^(WKPaymentBtnModel mTag) {
+        switch (mTag) {
+            case WKPaymentGoPayModel:
+            {
+                [weakSelf.mPayView WKRemovePaymentView];
+            }
+                break;
+            case WKPaymentLeftImageModel:
+            {
+                [weakSelf.mPayView WKShowPaymentDetail:nil];
+            }
+                break;
+            default:
+                break;
+        }
+    };
+
 }
 
 /*

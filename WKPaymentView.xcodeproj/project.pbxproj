@@ -16,6 +16,10 @@
 		186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE86F223CCA5200CFE043 /* YHPDFImageLoader.m */; };
 		186FE878223CCA5200CFE043 /* UIImage+YHPDFIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE870223CCA5200CFE043 /* UIImage+YHPDFIcon.m */; };
 		186FE879223CCA5200CFE043 /* YHPDFImageDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE871223CCA5200CFE043 /* YHPDFImageDraw.m */; };
+		186FE87F223CD91A00CFE043 /* WKPaymentDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE87D223CD91A00CFE043 /* WKPaymentDefaultCell.m */; };
+		186FE880223CD91A00CFE043 /* WKPaymentDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186FE87E223CD91A00CFE043 /* WKPaymentDefaultCell.xib */; };
+		186FE883223CDAC200CFE043 /* WKPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE882223CDAC200CFE043 /* WKPaymentModel.m */; };
+		186FE8B5223D09A800CFE043 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186FE8B4223D09A700CFE043 /* libsqlite3.tbd */; };
 		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
@@ -71,6 +75,13 @@
 		186FE871223CCA5200CFE043 /* YHPDFImageDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDFImageDraw.m; sourceTree = "<group>"; };
 		186FE872223CCA5200CFE043 /* NSString+YHMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YHMD5.h"; sourceTree = "<group>"; };
 		186FE873223CCA5200CFE043 /* YHPDFImagePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDFImagePath.h; sourceTree = "<group>"; };
+		186FE87B223CCBB000CFE043 /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
+		186FE87C223CD91A00CFE043 /* WKPaymentDefaultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentDefaultCell.h; sourceTree = "<group>"; };
+		186FE87D223CD91A00CFE043 /* WKPaymentDefaultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentDefaultCell.m; sourceTree = "<group>"; };
+		186FE87E223CD91A00CFE043 /* WKPaymentDefaultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymentDefaultCell.xib; sourceTree = "<group>"; };
+		186FE881223CDAC200CFE043 /* WKPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentModel.h; sourceTree = "<group>"; };
+		186FE882223CDAC200CFE043 /* WKPaymentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentModel.m; sourceTree = "<group>"; };
+		186FE8B4223D09A700CFE043 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186FE8B5223D09A800CFE043 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +169,14 @@
 			path = YHPDFImageLoader;
 			sourceTree = "<group>";
 		};
+		186FE8B3223D09A700CFE043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				186FE8B4223D09A700CFE043 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18D071072238F48600B16840 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 				18D0712B2238F48800B16840 /* WKPaymentViewTests */,
 				18D071362238F48800B16840 /* WKPaymentViewUITests */,
 				18D071112238F48600B16840 /* Products */,
+				186FE8B3223D09A700CFE043 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +209,7 @@
 				18D071462238F4E800B16840 /* SecondViewController.m */,
 				18CF7507223B3EC600605958 /* ThirdViewController.h */,
 				18CF7508223B3EC600605958 /* ThirdViewController.m */,
+				186FE87B223CCBB000CFE043 /* Header.pch */,
 				186FE866223CCA5200CFE043 /* YHPDFImageLoader */,
 				186E0E1E223A539F00B28C44 /* AGWindowView */,
 				18D071482238F52A00B16840 /* WKPaymentView */,
@@ -236,6 +258,9 @@
 		18D071492238F54400B16840 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				186FE87C223CD91A00CFE043 /* WKPaymentDefaultCell.h */,
+				186FE87D223CD91A00CFE043 /* WKPaymentDefaultCell.m */,
+				186FE87E223CD91A00CFE043 /* WKPaymentDefaultCell.xib */,
 				18D071552238FFDD00B16840 /* WKPaymentDetailCell.h */,
 				18D071562238FFDD00B16840 /* WKPaymentDetailCell.m */,
 				18D071572238FFDD00B16840 /* WKPaymentDetailCell.xib */,
@@ -249,6 +274,8 @@
 		18D0714A2238F54B00B16840 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				186FE881223CDAC200CFE043 /* WKPaymentModel.h */,
+				186FE882223CDAC200CFE043 /* WKPaymentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,6 +389,7 @@
 				18D0715E223901E100B16840 /* WKPaymentMethodCell.xib in Resources */,
 				18D0711B2238F48600B16840 /* Main.storyboard in Resources */,
 				186E0E27223A727B00B28C44 /* WKPayTableView.xib in Resources */,
+				186FE880223CD91A00CFE043 /* WKPaymentDefaultCell.xib in Resources */,
 				18D071592238FFDD00B16840 /* WKPaymentDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				186FE874223CCA5200CFE043 /* YHPDFImageCache.m in Sources */,
+				186FE87F223CD91A00CFE043 /* WKPaymentDefaultCell.m in Sources */,
 				18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */,
 				186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */,
 				18D071472238F4E800B16840 /* SecondViewController.m in Sources */,
@@ -400,6 +429,7 @@
 				18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */,
 				186FE876223CCA5200CFE043 /* YHPDFImagePath.m in Sources */,
 				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
+				186FE883223CDAC200CFE043 /* WKPaymentModel.m in Sources */,
 				18D071232238F48800B16840 /* main.m in Sources */,
 				18D071152238F48600B16840 /* AppDelegate.m in Sources */,
 				186FE878223CCA5200CFE043 /* UIImage+YHPDFIcon.m in Sources */,
@@ -574,6 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WKPaymentView/Header.pch";
 				INFOPLIST_FILE = WKPaymentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,6 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WKPaymentView/Header.pch";
 				INFOPLIST_FILE = WKPaymentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

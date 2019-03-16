@@ -11,42 +11,22 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
-    ///默认类型
-    WKPaymentDefault,
-    ///支付详情类型
-    WKPaymentDetail,
-    ///SPG类型
-    WKPaymentSPGDetail,
-    ///汇款类型
-    WKPaymentRemiitanceDetail,
-    ///跨境支付类型
-    WKPaymentCrossBorderDetail,
-    ///优惠卷类型
-    WKPaymentCouponDetail,
-    ///支付方式类型
-    WKPaymentMethod,
-    ///输入支付密码
-    WKPaymentInputPINCode,
-    ///设置支付密码
-    WKSetPaymentPIN,
-    ///支付中类型
-    WKPaymenting,
-} WKPaymentType;///支付类型
-
-
-typedef enum : NSUInteger {
     WKPayTableViewDisPlayLeft,
     WKPayTableViewDisPlayMid,
     WKPayTableViewDisPlayRight,
 } WKPayTableViewDisPlayType;
 
 
-typedef void(^WKPaymentDetailViewClick)(NSInteger mTag);
+typedef void(^WKPaymentDetailViewClick)(WKPaymentBtnModel mTag);
 
+typedef void(^WKPaymentMethodViewClick)(WKPaymentBtnModel mTag);
 
 @interface WKPaymentView : UIView
 #pragma mark----****----回调方法⬇️
 @property (copy,nonatomic) WKPaymentDetailViewClick WKPayDetailViewHandle;
+
+@property (copy,nonatomic) WKPaymentMethodViewClick WKPayMethodViewHandle;
+
 #pragma mark----****----回调方法⬆️
 
 /**
@@ -136,6 +116,11 @@ typedef void(^WKPaymentDetailViewClick)(NSInteger mTag);
 - (void)WKAddNavMaskView;
 #pragma mark----****----移除导航条蒙层view
 - (void)WKRemoveNavMaskView;
+
+#pragma mark----****----传递方法
+- (void)WKShowPaymentDetail:(WKPaymentModel *)model;
+- (void)WKShowPaymentMethod:(WKPaymentModel *)model;
+
 @end
 
 NS_ASSUME_NONNULL_END

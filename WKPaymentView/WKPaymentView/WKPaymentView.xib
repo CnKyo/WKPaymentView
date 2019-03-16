@@ -20,6 +20,10 @@
                     <rect key="frame" x="0.0" y="-80" width="375" height="747"/>
                     <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.68624250860000002" colorSpace="calibratedRGB"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwJ-eZ-xmN">
+                    <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-nn-HaF">
                     <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,6 +41,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="k1C-2q-F8o" secondAttribute="trailing" id="0kg-XO-jmC"/>
                 <constraint firstItem="cRj-nn-HaF" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="2:3" id="1OE-5r-CXH"/>
+                <constraint firstItem="mwJ-eZ-xmN" firstAttribute="top" secondItem="cRj-nn-HaF" secondAttribute="top" id="BIP-1N-xPH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cRj-nn-HaF" secondAttribute="bottom" id="DtE-Pi-3dj"/>
                 <constraint firstItem="k1C-2q-F8o" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="DxM-be-z4e"/>
                 <constraint firstItem="Qyb-DI-kAQ" firstAttribute="leading" secondItem="cRj-nn-HaF" secondAttribute="trailing" id="EdB-dI-J5A"/>
@@ -44,7 +49,10 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cRj-nn-HaF" secondAttribute="trailing" id="Mlg-my-D4u"/>
                 <constraint firstItem="XhP-x8-V6a" firstAttribute="bottom" secondItem="Qyb-DI-kAQ" secondAttribute="bottom" id="XL6-s4-ayv"/>
                 <constraint firstItem="Qyb-DI-kAQ" firstAttribute="bottom" secondItem="cRj-nn-HaF" secondAttribute="bottom" id="YPF-v7-2R1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mwJ-eZ-xmN" secondAttribute="trailing" id="d3X-aF-f8Z"/>
                 <constraint firstItem="Qyb-DI-kAQ" firstAttribute="top" secondItem="cRj-nn-HaF" secondAttribute="top" id="eq8-lN-Csz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mwJ-eZ-xmN" secondAttribute="bottom" id="g6a-lX-ovi"/>
+                <constraint firstItem="mwJ-eZ-xmN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iaa-Dl-g0H"/>
                 <constraint firstItem="XhP-x8-V6a" firstAttribute="width" secondItem="Qyb-DI-kAQ" secondAttribute="width" id="ite-LX-3Oz"/>
                 <constraint firstItem="Qyb-DI-kAQ" firstAttribute="width" secondItem="cRj-nn-HaF" secondAttribute="width" id="jM1-9f-v1h"/>
                 <constraint firstItem="XhP-x8-V6a" firstAttribute="leading" secondItem="Qyb-DI-kAQ" secondAttribute="trailing" id="kWg-9A-Ohe"/>
