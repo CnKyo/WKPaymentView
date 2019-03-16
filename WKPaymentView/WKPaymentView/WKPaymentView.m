@@ -7,6 +7,7 @@
 //
 
 #import "WKPaymentView.h"
+#import "WKPayTableView.h"
 
 #import "AGWindowView.h"
 
@@ -18,7 +19,11 @@
 
 
 @interface WKPaymentView ()<WKPayTableViewDidBtnClickDelegate>
+@property (strong,nonatomic) WKPayTableView *mLeftPayTableView;
 
+@property (strong,nonatomic) WKPayTableView *mMidPayTableView;
+
+@property (strong,nonatomic) WKPayTableView *mRightPayTableView;
 @end
 
 @implementation WKPaymentView

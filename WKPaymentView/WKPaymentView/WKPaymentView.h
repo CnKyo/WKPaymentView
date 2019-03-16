@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WKPayTableView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -73,12 +72,6 @@ typedef void(^WKPaymentDetailViewClick)(NSInteger mTag);
  最右边的tableView
  */
 @property (weak, nonatomic) IBOutlet UIView *mRightTableView;
-
-@property (strong,nonatomic) WKPayTableView *mLeftPayTableView;
-
-@property (strong,nonatomic) WKPayTableView *mMidPayTableView;
-
-@property (strong,nonatomic) WKPayTableView *mRightPayTableView;
 
 @property (assign,nonatomic) WKPaymentType mPayViewType;
 

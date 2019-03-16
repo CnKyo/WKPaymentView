@@ -10,6 +10,12 @@
 		186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E21223A539F00B28C44 /* AGWindowView.m */; };
 		186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186E0E24223A727100B28C44 /* WKPayTableView.m */; };
 		186E0E27223A727B00B28C44 /* WKPayTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E0E26223A727B00B28C44 /* WKPayTableView.xib */; };
+		186FE874223CCA5200CFE043 /* YHPDFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE868223CCA5200CFE043 /* YHPDFImageCache.m */; };
+		186FE875223CCA5200CFE043 /* NSString+YHMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE86B223CCA5200CFE043 /* NSString+YHMD5.m */; };
+		186FE876223CCA5200CFE043 /* YHPDFImagePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE86C223CCA5200CFE043 /* YHPDFImagePath.m */; };
+		186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE86F223CCA5200CFE043 /* YHPDFImageLoader.m */; };
+		186FE878223CCA5200CFE043 /* UIImage+YHPDFIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE870223CCA5200CFE043 /* UIImage+YHPDFIcon.m */; };
+		186FE879223CCA5200CFE043 /* YHPDFImageDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE871223CCA5200CFE043 /* YHPDFImageDraw.m */; };
 		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
@@ -52,6 +58,19 @@
 		186E0E23223A727100B28C44 /* WKPayTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPayTableView.h; sourceTree = "<group>"; };
 		186E0E24223A727100B28C44 /* WKPayTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPayTableView.m; sourceTree = "<group>"; };
 		186E0E26223A727B00B28C44 /* WKPayTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPayTableView.xib; sourceTree = "<group>"; };
+		186FE867223CCA5200CFE043 /* YHPDFImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDFImageLoader.h; sourceTree = "<group>"; };
+		186FE868223CCA5200CFE043 /* YHPDFImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDFImageCache.m; sourceTree = "<group>"; };
+		186FE869223CCA5200CFE043 /* YHPDFImageDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDFImageDraw.h; sourceTree = "<group>"; };
+		186FE86A223CCA5200CFE043 /* UIImage+YHPDFIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YHPDFIcon.h"; sourceTree = "<group>"; };
+		186FE86B223CCA5200CFE043 /* NSString+YHMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YHMD5.m"; sourceTree = "<group>"; };
+		186FE86C223CCA5200CFE043 /* YHPDFImagePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDFImagePath.m; sourceTree = "<group>"; };
+		186FE86D223CCA5200CFE043 /* YHPDFImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDFImageCache.h; sourceTree = "<group>"; };
+		186FE86E223CCA5200CFE043 /* YH_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YH_config.h; sourceTree = "<group>"; };
+		186FE86F223CCA5200CFE043 /* YHPDFImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDFImageLoader.m; sourceTree = "<group>"; };
+		186FE870223CCA5200CFE043 /* UIImage+YHPDFIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YHPDFIcon.m"; sourceTree = "<group>"; };
+		186FE871223CCA5200CFE043 /* YHPDFImageDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHPDFImageDraw.m; sourceTree = "<group>"; };
+		186FE872223CCA5200CFE043 /* NSString+YHMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YHMD5.h"; sourceTree = "<group>"; };
+		186FE873223CCA5200CFE043 /* YHPDFImagePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHPDFImagePath.h; sourceTree = "<group>"; };
 		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +137,26 @@
 			path = AGWindowView;
 			sourceTree = "<group>";
 		};
+		186FE866223CCA5200CFE043 /* YHPDFImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				186FE867223CCA5200CFE043 /* YHPDFImageLoader.h */,
+				186FE868223CCA5200CFE043 /* YHPDFImageCache.m */,
+				186FE869223CCA5200CFE043 /* YHPDFImageDraw.h */,
+				186FE86A223CCA5200CFE043 /* UIImage+YHPDFIcon.h */,
+				186FE86B223CCA5200CFE043 /* NSString+YHMD5.m */,
+				186FE86C223CCA5200CFE043 /* YHPDFImagePath.m */,
+				186FE86D223CCA5200CFE043 /* YHPDFImageCache.h */,
+				186FE86E223CCA5200CFE043 /* YH_config.h */,
+				186FE86F223CCA5200CFE043 /* YHPDFImageLoader.m */,
+				186FE870223CCA5200CFE043 /* UIImage+YHPDFIcon.m */,
+				186FE871223CCA5200CFE043 /* YHPDFImageDraw.m */,
+				186FE872223CCA5200CFE043 /* NSString+YHMD5.h */,
+				186FE873223CCA5200CFE043 /* YHPDFImagePath.h */,
+			);
+			path = YHPDFImageLoader;
+			sourceTree = "<group>";
+		};
 		18D071072238F48600B16840 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +188,7 @@
 				18D071462238F4E800B16840 /* SecondViewController.m */,
 				18CF7507223B3EC600605958 /* ThirdViewController.h */,
 				18CF7508223B3EC600605958 /* ThirdViewController.m */,
+				186FE866223CCA5200CFE043 /* YHPDFImageLoader */,
 				186E0E1E223A539F00B28C44 /* AGWindowView */,
 				18D071482238F52A00B16840 /* WKPaymentView */,
 				18D071192238F48600B16840 /* Main.storyboard */,
@@ -347,16 +387,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186FE874223CCA5200CFE043 /* YHPDFImageCache.m in Sources */,
 				18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */,
+				186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */,
 				18D071472238F4E800B16840 /* SecondViewController.m in Sources */,
 				18D071182238F48600B16840 /* ViewController.m in Sources */,
 				18D0714D2238F55E00B16840 /* WKPaymentView.m in Sources */,
+				186FE875223CCA5200CFE043 /* NSString+YHMD5.m in Sources */,
+				186FE879223CCA5200CFE043 /* YHPDFImageDraw.m in Sources */,
 				186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */,
 				186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */,
 				18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */,
+				186FE876223CCA5200CFE043 /* YHPDFImagePath.m in Sources */,
 				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
 				18D071232238F48800B16840 /* main.m in Sources */,
 				18D071152238F48600B16840 /* AppDelegate.m in Sources */,
+				186FE878223CCA5200CFE043 /* UIImage+YHPDFIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

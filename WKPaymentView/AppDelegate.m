@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIImage+YHPDFIcon.h"
 
 @interface AppDelegate ()
 
