@@ -251,9 +251,15 @@
     }
     
 }
-- (void)WKPayTableViewPaymentMethodDidClicked:(WKPaymentBtnModel)mTag{
+- (void)WKPayTableViewPaymentMethodDidClicked:(WKPaymentBtnModel)mTag andSelectedMethod:(nonnull WKPaymentMethodModel *)mCurrentMethod{
     if (self.WKPayMethodViewHandle) {
-        self.WKPayMethodViewHandle(mTag);
+        self.WKPayMethodViewHandle(mTag,mCurrentMethod);
+    }
+}
+- (void)WKPayTableViewPaymentPINCodeHandle:(NSString *)mPIN{
+    NSLog(@"you are input:%@",mPIN);
+    if (self.WKPayPINCodeViewHandle) {
+        self.WKPayPINCodeViewHandle(mPIN);
     }
 }
 
@@ -282,6 +288,14 @@
     [self WKLeftToMid];
     [self.mMidPayTableView WKShowPaymentMethod:model];
 
+}
+- (void)WKShowPaymentPIN:(WKPaymentModel *)model{
+    [self WKLeftToMid];
+    [self.mMidPayTableView WKShowPaymentPIN:model];
+}
+- (void)WKShowPaymentLoading:(ALLoadingViewResultType)mType andMessage:(NSString *)message{
+    [self WKMidToRight];
+    [self.mRightPayTableView WKShowPaymentLoading:mType andMessage:message];
 }
 
 @end

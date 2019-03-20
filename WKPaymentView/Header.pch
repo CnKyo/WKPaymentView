@@ -12,7 +12,9 @@
 
 #import "UIImage+YHPDFIcon.h"
 #import "WKPaymentModel.h"
+#import "ALLoadingView.h"
 
+#define KMethodColor [UIColor colorWithRed:68/255.0f green:214/255.0f blue:44/255.0f alpha:1]
 
 #define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight   [[UIScreen mainScreen] bounds].size.height

@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WKPaymenMethodSubCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *mLogo;
+
+@property (weak, nonatomic) IBOutlet UILabel *mMethodName;
+
+@property (weak, nonatomic) IBOutlet UILabel *mBalance;
+
+@property (weak, nonatomic) IBOutlet UIImageView *mSelectedImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

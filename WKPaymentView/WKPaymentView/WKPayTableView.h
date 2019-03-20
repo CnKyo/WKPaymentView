@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)WKPayTableViewPaymentDetailDidClicked:(WKPaymentBtnModel)mTag;
 
-- (void)WKPayTableViewPaymentMethodDidClicked:(WKPaymentBtnModel)mTag;
+- (void)WKPayTableViewPaymentMethodDidClicked:(WKPaymentBtnModel)mTag andSelectedMethod:(WKPaymentMethodModel *)mCurrentMethod;
 
-
+- (void)WKPayTableViewPaymentPINCodeHandle:(NSString *)mPIN;
 @end
 
 @interface WKPayTableView : UIView<UITableViewDelegate,UITableViewDataSource>
@@ -29,13 +29,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (assign,nonatomic) WKPaymentModel *model;
 
+@property (strong,nonatomic) NSString *messgae;
+
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
+@property (strong,nonatomic) NSMutableArray *mMethods;
+
 @property (weak,nonatomic) id<WKPayTableViewDidBtnClickDelegate> delegate;
+
 
 #pragma mark----****----传递方法
 - (void)WKShowPaymentDetail:(WKPaymentModel *)model;
 - (void)WKShowPaymentMethod:(WKPaymentModel *)model;
+- (void)WKShowPaymentPIN:(WKPaymentModel *)model;
+- (void)loadPaymentMethod:(NSArray *)dataSource;
+
+- (void)WKShowPaymentLoading:(ALLoadingViewResultType)mType andMessage:(NSString *)message;
 
 @end
 

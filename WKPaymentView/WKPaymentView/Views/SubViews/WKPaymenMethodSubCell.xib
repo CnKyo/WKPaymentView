@@ -26,9 +26,8 @@
                             <constraint firstAttribute="height" constant="24" id="mAb-7e-bTA"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-TF-nyO">
-                        <rect key="frame" x="139" y="16" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razer Pay Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-TF-nyO">
+                        <rect key="frame" x="66" y="17" width="106.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,15 +39,43 @@
                             <constraint firstAttribute="width" constant="24" id="cof-oJ-gFL"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bkc-31-1am">
+                        <rect key="frame" x="66" y="53.5" width="254" height="1"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.504181338028169" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="JJW-Ty-aT0"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SGD 350.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ADa-J2-X5P">
+                        <rect key="frame" x="177.5" y="17" width="106.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.22352941179999999" green="0.81960784310000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="ADa-J2-X5P" firstAttribute="leading" secondItem="B1D-TF-nyO" secondAttribute="trailing" constant="5" id="4MU-d1-eeK"/>
                     <constraint firstItem="8Br-HU-9VT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="95V-2X-8O5"/>
+                    <constraint firstAttribute="trailing" secondItem="Bkc-31-1am" secondAttribute="trailing" id="AeR-FD-ItY"/>
                     <constraint firstAttribute="trailing" secondItem="q1f-Ct-Iyu" secondAttribute="trailing" constant="5" id="DYq-zt-4fc"/>
+                    <constraint firstItem="q1f-Ct-Iyu" firstAttribute="leading" secondItem="ADa-J2-X5P" secondAttribute="trailing" constant="7" id="F53-j0-fdC"/>
+                    <constraint firstAttribute="bottom" secondItem="Bkc-31-1am" secondAttribute="bottom" id="HkO-to-heq"/>
+                    <constraint firstItem="Bkc-31-1am" firstAttribute="leading" secondItem="B1D-TF-nyO" secondAttribute="leading" id="Lhx-kk-4Ty"/>
+                    <constraint firstItem="B1D-TF-nyO" firstAttribute="centerY" secondItem="8Br-HU-9VT" secondAttribute="centerY" id="RSG-l9-wv2"/>
+                    <constraint firstItem="B1D-TF-nyO" firstAttribute="leading" secondItem="8Br-HU-9VT" secondAttribute="trailing" constant="12" id="YhB-3d-jet"/>
                     <constraint firstItem="q1f-Ct-Iyu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hiS-2B-ZiF"/>
+                    <constraint firstItem="ADa-J2-X5P" firstAttribute="centerY" secondItem="B1D-TF-nyO" secondAttribute="centerY" id="m3x-bP-mcK"/>
                     <constraint firstItem="8Br-HU-9VT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rPz-AW-0LX"/>
+                    <constraint firstItem="ADa-J2-X5P" firstAttribute="width" secondItem="B1D-TF-nyO" secondAttribute="width" id="tLN-wh-LdU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="mBalance" destination="ADa-J2-X5P" id="8bf-wh-X0V"/>
+                <outlet property="mLogo" destination="8Br-HU-9VT" id="MfH-Gb-KZz"/>
+                <outlet property="mMethodName" destination="B1D-TF-nyO" id="Rdt-Ih-DWo"/>
+                <outlet property="mSelectedImage" destination="q1f-Ct-Iyu" id="KCo-KI-cPm"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

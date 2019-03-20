@@ -10,7 +10,8 @@
 #import "WKPaymentDefaultCell.h"
 #import "WKPaymentDetailCell.h"
 #import "WKPaymentMethodCell.h"
-
+#import "WKPaymentViewInputPINCell.h"
+#import "WKPaymentingCell.h"
 #define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight   [[UIScreen mainScreen] bounds].size.height
 
@@ -41,7 +42,14 @@
     nib = [UINib nibWithNibName:@"WKPaymentMethodCell" bundle:nil];
     [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentMethodCell"];
 
+    nib = [UINib nibWithNibName:@"WKPaymentViewInputPINCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentPINCell"];
     
+    nib = [UINib nibWithNibName:@"WKPaymentingCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentLoadingCell"];
+    
+    view.mMethods = [NSMutableArray new];
+
     return view;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -72,12 +80,47 @@
         string = @"paymentMethodCell";
         WKPaymentMethodCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.mBtnBlock = ^(WKPaymentBtnModel mIndex) {
-            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentMethodDidClicked:)]) {
-                [weakSelf.delegate WKPayTableViewPaymentMethodDidClicked:mIndex];
+        cell.mBtnBlock = ^(WKPaymentBtnModel mIndex,WKPaymentMethodModel *mCurrentMethod) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentMethodDidClicked:andSelectedMethod:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentMethodDidClicked:mIndex andSelectedMethod:mCurrentMethod];
             }
 
         };
+        [cell loadPaymentMethod:self.mMethods];
+        return cell;
+    }
+    else if (self.mPayViewType == WKPaymentInputPINCode){
+        string = @"paymentPINCell";
+        WKPaymentViewInputPINCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+       
+        cell.mBtnBlock = ^(WKPaymentBtnModel mTag) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag];
+            }
+        };
+        cell.mInputPinBlock = ^(NSString * _Nonnull mPinText) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentPINCodeHandle:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentPINCodeHandle:mPinText];
+            }
+        };
+        return cell;
+    }
+    else if (self.mPayViewType == WKPaymenting){
+        
+        NSInteger mAnimatModel = [[[NSUserDefaults standardUserDefaults]valueForKey:@"animationModel"] integerValue];
+
+        
+        string = @"paymentLoadingCell";
+        WKPaymentingCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        cell.mBlock = ^(WKPaymentBtnModel mTag) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag];
+            }
+        };
+        [cell WKUpdateLoadingAnimat:mAnimatModel andMessage:self.messgae];
         return cell;
     }
     else{
@@ -115,7 +158,47 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymentMethod] forKey:@"type"];
 
+    NSArray *mArr = @[@"balance",@"card"];
     
+ 
+    
+    [self loadPaymentMethod:mArr];
+}
+- (void)WKShowPaymentPIN:(WKPaymentModel *)model{
+    self.model = model;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymentInputPINCode] forKey:@"type"];
+    [self.mTableView reloadData];
+
+}
+- (void)loadPaymentMethod:(NSArray *)dataSource{
+    if (!self.mMethods) {
+        self.mMethods = [NSMutableArray new];
+    }
+    [self.mMethods removeAllObjects];
+    for (NSUInteger i = 0; i<2; i++) {
+        WKPaymentMethodModel *method = [WKPaymentMethodModel new];
+        method.mTitle = dataSource[i];
+        if (i==0) {
+            method.selected = YES;
+        }else{
+            method.selected = NO;
+        }
+        [self.mMethods addObject:method];
+
+    }
+    
+    [self.mTableView reloadData];
+}
+- (void)WKShowPaymentLoading:(ALLoadingViewResultType)mType andMessage:(NSString *)message{
+
+    self.messgae = message;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymenting] forKey:@"type"];
+    
+    NSUserDefaults *animationModel = [NSUserDefaults standardUserDefaults];
+    [animationModel setValue:[NSString stringWithFormat:@"%ld",mType] forKey:@"animationModel"];
     [self.mTableView reloadData];
 }
 @end

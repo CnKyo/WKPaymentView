@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^WKPaymentMethodCellBtnClickBlock)(WKPaymentBtnModel mTag);
+typedef void(^WKPaymentMethodCellBtnClickBlock)(WKPaymentBtnModel mTag,WKPaymentMethodModel *mCurrentMethod);
 
 @interface WKPaymentMethodCell : UITableViewCell<UITableViewDelegate,UITableViewDataSource>
 
@@ -24,6 +24,12 @@ typedef void(^WKPaymentMethodCellBtnClickBlock)(WKPaymentBtnModel mTag);
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
 @property (weak, nonatomic) IBOutlet UIButton *mGoPayBtn;
+
+@property (strong,nonatomic) NSMutableArray *mMethods;
+
+@property (strong,nonatomic) WKPaymentMethodModel *mCurrentMethod;
+
+- (void)loadPaymentMethod:(NSArray *)dataSource;
 
 @end
 

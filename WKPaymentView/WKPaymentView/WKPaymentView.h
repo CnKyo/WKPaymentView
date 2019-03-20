@@ -19,13 +19,17 @@ typedef enum : NSUInteger {
 
 typedef void(^WKPaymentDetailViewClick)(WKPaymentBtnModel mTag);
 
-typedef void(^WKPaymentMethodViewClick)(WKPaymentBtnModel mTag);
+typedef void(^WKPaymentMethodViewClick)(WKPaymentBtnModel mTag,WKPaymentMethodModel *mCurrentMethod);
+
+typedef void(^WKPaymentViewPINCodeBlock)(NSString *mPINCode);
 
 @interface WKPaymentView : UIView
 #pragma mark----****----回调方法⬇️
 @property (copy,nonatomic) WKPaymentDetailViewClick WKPayDetailViewHandle;
 
 @property (copy,nonatomic) WKPaymentMethodViewClick WKPayMethodViewHandle;
+
+@property (copy,nonatomic) WKPaymentViewPINCodeBlock WKPayPINCodeViewHandle;
 
 #pragma mark----****----回调方法⬆️
 
@@ -120,6 +124,9 @@ typedef void(^WKPaymentMethodViewClick)(WKPaymentBtnModel mTag);
 #pragma mark----****----传递方法
 - (void)WKShowPaymentDetail:(WKPaymentModel *)model;
 - (void)WKShowPaymentMethod:(WKPaymentModel *)model;
+- (void)WKShowPaymentPIN:(WKPaymentModel *)model;
+
+- (void)WKShowPaymentLoading:(ALLoadingViewResultType)mType andMessage:(NSString *)message;
 
 @end
 

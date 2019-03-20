@@ -12,3 +12,8 @@
 @implementation WKPaymentModel
 
 @end
+
+@implementation WKPaymentMethodModel
+
+@end
+

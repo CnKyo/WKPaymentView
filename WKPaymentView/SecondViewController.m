@@ -35,7 +35,9 @@
         switch (mTag) {
             case WKPaymentGoPayModel:
             {
-                [weakSelf.mPayView WKRemovePaymentView];
+//                [weakSelf.mPayView WKRemovePaymentView];
+                [weakSelf.mPayView WKShowPaymentPIN:nil];
+
             }
                 break;
             case WKPaymentLeftImageModel:
@@ -65,11 +67,13 @@
         
 
     };
-    self.mPayView.WKPayMethodViewHandle = ^(WKPaymentBtnModel mTag) {
+    self.mPayView.WKPayMethodViewHandle = ^(WKPaymentBtnModel mTag,WKPaymentMethodModel *mCurrentMethod) {
         switch (mTag) {
             case WKPaymentGoPayModel:
             {
-                [weakSelf.mPayView WKRemovePaymentView];
+//                [weakSelf.mPayView WKRemovePaymentView];
+                [weakSelf.mPayView WKShowPaymentDetail:nil];
+
             }
                 break;
             case WKPaymentLeftImageModel:
@@ -80,6 +84,11 @@
             default:
                 break;
         }
+    };
+    
+    self.mPayView.WKPayPINCodeViewHandle = ^(NSString * _Nonnull mPINCode) {
+        NSLog(@"you are input:%@",mPINCode);
+        [weakSelf.mPayView WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"Verifying Payment…"];
     };
 
 }

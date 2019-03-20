@@ -17,5 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic) NSString *mCategory;
 @end
 
+@interface WKPaymentMethodModel : NSObject
+
+@property (strong,nonatomic) NSString *mTitle;
+@property (assign,nonatomic) BOOL selected;
+
+@end
 
 NS_ASSUME_NONNULL_END
