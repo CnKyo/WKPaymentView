@@ -220,13 +220,22 @@
         self.mMethods = [NSMutableArray new];
     }
     [self.mMethods removeAllObjects];
-    for (NSUInteger i = 0; i<2; i++) {
+    for (NSUInteger i = 0; i<3; i++) {
         WKPaymentMethodModel *method = [WKPaymentMethodModel new];
         method.mTitle = dataSource[i];
         if (i==0) {
             method.selected = YES;
-        }else{
+            method.mType = WKPaymentMethodBankCardType;
+        }
+        else if (i == 1){
             method.selected = NO;
+            method.mType = WKPaymentMethodOnlineBankType;
+
+        }
+        else{
+            method.selected = NO;
+            method.mType = WKPaymentMethodAddCardType;
+
         }
         [self.mMethods addObject:method];
 

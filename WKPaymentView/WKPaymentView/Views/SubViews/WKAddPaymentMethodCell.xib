@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ue8-fn-HTj" customClass="WKAddPaymentMethodCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ue8-fn-HTj" id="2tb-iP-3eA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yGn-zB-9lI">
+                        <rect key="frame" x="30" y="15.5" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="1Jp-lH-vTy"/>
+                            <constraint firstAttribute="width" constant="24" id="73D-fx-B0I"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Bank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-2H-N1A">
+                        <rect key="frame" x="66" y="17" width="219" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CgE-g6-pfr">
+                        <rect key="frame" x="295" y="21" width="7" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="BJb-VB-pWe"/>
+                            <constraint firstAttribute="width" constant="7" id="oIj-k5-TMq"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kec-Cf-tCY">
+                        <rect key="frame" x="66" y="53.5" width="254" height="1"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="SIr-3a-RAt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="kec-Cf-tCY" secondAttribute="bottom" id="2kO-sb-dGC"/>
+                    <constraint firstItem="yGn-zB-9lI" firstAttribute="leading" secondItem="2tb-iP-3eA" secondAttribute="leading" constant="30" id="8iN-Dw-2tk"/>
+                    <constraint firstItem="Mfc-2H-N1A" firstAttribute="centerY" secondItem="yGn-zB-9lI" secondAttribute="centerY" id="9mh-Ys-JPI"/>
+                    <constraint firstAttribute="trailing" secondItem="kec-Cf-tCY" secondAttribute="trailing" id="Lbo-pZ-ELe"/>
+                    <constraint firstItem="kec-Cf-tCY" firstAttribute="leading" secondItem="Mfc-2H-N1A" secondAttribute="leading" id="McB-mQ-OpK"/>
+                    <constraint firstItem="CgE-g6-pfr" firstAttribute="centerY" secondItem="2tb-iP-3eA" secondAttribute="centerY" id="N1i-hi-fxu"/>
+                    <constraint firstAttribute="trailing" secondItem="CgE-g6-pfr" secondAttribute="trailing" constant="18" id="PVz-lU-FoN"/>
+                    <constraint firstItem="Mfc-2H-N1A" firstAttribute="leading" secondItem="yGn-zB-9lI" secondAttribute="trailing" constant="12" id="XqD-bZ-KMo"/>
+                    <constraint firstItem="yGn-zB-9lI" firstAttribute="centerY" secondItem="2tb-iP-3eA" secondAttribute="centerY" id="cpD-ZO-pfP"/>
+                    <constraint firstItem="CgE-g6-pfr" firstAttribute="leading" secondItem="Mfc-2H-N1A" secondAttribute="trailing" constant="10" id="esf-zK-yqH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Uvx-wZ-XQw"/>
+            <connections>
+                <outlet property="mArrow" destination="CgE-g6-pfr" id="UeD-Tj-9lz"/>
+                <outlet property="mLogo" destination="yGn-zB-9lI" id="YN3-O8-TTj"/>
+                <outlet property="mTitle" destination="Mfc-2H-N1A" id="0O6-pp-NeP"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

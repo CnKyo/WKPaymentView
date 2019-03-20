@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic) NSString *mTitle;
 @property (assign,nonatomic) BOOL selected;
 
+@property (assign,nonatomic) NSInteger mType;
+
 @end
 
 NS_ASSUME_NONNULL_END

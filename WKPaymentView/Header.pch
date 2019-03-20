@@ -69,4 +69,15 @@ typedef enum : NSUInteger {
     WKPaymentGoPayModel = 4,
 } WKPaymentBtnModel;///支付控件按钮类型
 
+typedef enum : NSUInteger {
+    ///余额支付类型
+    WKPaymentMethodBalanceType = 0,
+    ///银行卡类型
+    WKPaymentMethodBankCardType = 1,
+    ///添加银行卡类型
+    WKPaymentMethodAddCardType = 2,
+    ///在线银行卡类型
+    WKPaymentMethodOnlineBankType = 3,
+} WKPaymentMethodType;///支付方式类型
+
 #endif /* Header_pch */

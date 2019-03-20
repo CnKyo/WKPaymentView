@@ -8,6 +8,7 @@
 
 #import "WKPaymentMethodCell.h"
 #import "WKPaymenMethodSubCell.h"
+#import "WKAddPaymentMethodCell.h"
 @implementation WKPaymentMethodCell
 
 - (void)awakeFromNib {
@@ -24,6 +25,13 @@
     
     nib = [UINib nibWithNibName:@"WKPaymenMethodBankCell" bundle:nil];
     [self.mTableView registerNib:nib forCellReuseIdentifier:@"bankCell"];
+    
+    nib = [UINib nibWithNibName:@"WKAddPaymentMethodCell" bundle:nil];
+    [self.mTableView registerNib:nib forCellReuseIdentifier:@"methodCell"];
+    
+    nib = [UINib nibWithNibName:@"WKAddPaymentMethodCell" bundle:nil];
+    [self.mTableView registerNib:nib forCellReuseIdentifier:@"onlineBankCell"];
+    
     
 }
 - (void)layoutSubviews{
@@ -54,7 +62,7 @@
 
 //    self.mPayViewType = [[[NSUserDefaults standardUserDefaults]valueForKey:@"type"] integerValue];
     WKPaymentMethodModel *method = self.mMethods[indexPath.row];
-    if ([method.mTitle isEqualToString:@"balance"]) {
+    if (method.mType == WKPaymentMethodBalanceType) {
         string = @"balanceCell";
         WKPaymenMethodSubCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -64,7 +72,7 @@
             cell.mSelectedImage.image = [UIImage yh_imageNamed:@""];
         }
         return cell;
-    }else{
+    }else if (method.mType == WKPaymentMethodBankCardType) {
         string = @"bankCell";
         WKPaymenMethodSubCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -75,7 +83,20 @@
         }
         return cell;
     }
-
+    else if (method.mType == WKPaymentMethodAddCardType) {
+        string = @"methodCell";
+        WKAddPaymentMethodCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+       
+        return cell;
+    }
+    else{
+        string = @"onlineBankCell";
+        WKAddPaymentMethodCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+       
+        return cell;
+    }
 }
 
 
