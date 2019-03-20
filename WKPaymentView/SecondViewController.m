@@ -29,9 +29,12 @@
 
     WKPaymentModel *model = [WKPaymentModel new];
     model.mTitle = @"这是标题";
-    [self.mPayView WKShowPaymentDetail:model];
+//    [self.mPayView WKShowPaymentDetail:model];
+//    [self.mPayView WKShowSetPINCode:model];
+    [self.mPayView WKShowCrosBorder:model];
 
-    self.mPayView.WKPayDetailViewHandle = ^(WKPaymentBtnModel mTag) {
+    self.mPayView.WKPayDetailViewHandle = ^(WKPaymentBtnModel mTag,WKPaymentType mType) {
+      
         switch (mTag) {
             case WKPaymentGoPayModel:
             {
@@ -49,6 +52,18 @@
             {
                 [weakSelf.mPayView WKShowPaymentMethod:nil];
 
+            }
+                break;
+            case WKPaymentSelectCouponModel:
+            {
+                [weakSelf.mPayView WKHiddenPaymentView:YES];
+                ThirdViewController *vc = [ThirdViewController new];
+                
+                vc.mBackBlock = ^{
+                    [weakSelf.mPayView WKHiddenPaymentView:NO];
+                };
+                
+                [weakSelf.navigationController pushViewController:vc animated:YES];
             }
                 break;
             default:
@@ -89,10 +104,24 @@
     self.mPayView.WKPayPINCodeViewHandle = ^(NSString * _Nonnull mPINCode) {
         NSLog(@"you are input:%@",mPINCode);
         [weakSelf.mPayView WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"Verifying Payment…"];
+        
+        
+        [weakSelf performSelector:@selector(loadS) withObject:nil afterDelay:2];
+        
+
     };
 
 }
 
+- (void)loadS{
+    [self.mPayView WKShowPaymentLoading:ALLoadingViewResultTypeSuccess andMessage:@"Successful!"];
+    [self performSelector:@selector(hiddenP) withObject:nil afterDelay:1.5];
+
+
+}
+- (void)hiddenP{
+    [self.mPayView WKRemovePaymentView];
+}
 /*
 #pragma mark - Navigation
 

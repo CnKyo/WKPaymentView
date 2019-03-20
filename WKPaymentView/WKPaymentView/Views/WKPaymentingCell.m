@@ -31,6 +31,11 @@
 
 - (void)WKUpdateLoadingAnimat:(ALLoadingViewResultType)mType andMessage:(NSString *)message{
     
+    
+    if (message.length<=0) {
+        message = @"Verifying Payment…";
+    }
+    self.mLoadingContent.text = message;
     self.mLoadingView.successColor = KMethodColor;
     self.mLoadingView.errorColor = KMethodColor;
     self.mLoadingView.loadingColor = KMethodColor;

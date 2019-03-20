@@ -554,6 +554,12 @@
 		186FE8B5223D09A800CFE043 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186FE8B4223D09A700CFE043 /* libsqlite3.tbd */; };
 		186FE8BA223D12E600CFE043 /* WKPaymenMethodSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186FE8B8223D12E600CFE043 /* WKPaymenMethodSubCell.m */; };
 		186FE8BB223D12E600CFE043 /* WKPaymenMethodSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186FE8B9223D12E600CFE043 /* WKPaymenMethodSubCell.xib */; };
+		18A017952242176B005A0574 /* WKPaymentDetailTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A017932242176B005A0574 /* WKPaymentDetailTwoCell.m */; };
+		18A017962242176B005A0574 /* WKPaymentDetailTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A017942242176B005A0574 /* WKPaymentDetailTwoCell.xib */; };
+		18A0179A224227BA005A0574 /* WKSetUpPINCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A01798224227BA005A0574 /* WKSetUpPINCell.m */; };
+		18A0179B224227BA005A0574 /* WKSetUpPINCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A01799224227BA005A0574 /* WKSetUpPINCell.xib */; };
+		18A0179F22423792005A0574 /* WKPayDetailCrossBorderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A0179D22423792005A0574 /* WKPayDetailCrossBorderCell.m */; };
+		18A017A022423792005A0574 /* WKPayDetailCrossBorderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0179E22423792005A0574 /* WKPayDetailCrossBorderCell.xib */; };
 		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
@@ -1157,6 +1163,15 @@
 		186FE8B7223D12E600CFE043 /* WKPaymenMethodSubCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymenMethodSubCell.h; sourceTree = "<group>"; };
 		186FE8B8223D12E600CFE043 /* WKPaymenMethodSubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymenMethodSubCell.m; sourceTree = "<group>"; };
 		186FE8B9223D12E600CFE043 /* WKPaymenMethodSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymenMethodSubCell.xib; sourceTree = "<group>"; };
+		18A017922242176B005A0574 /* WKPaymentDetailTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentDetailTwoCell.h; sourceTree = "<group>"; };
+		18A017932242176B005A0574 /* WKPaymentDetailTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentDetailTwoCell.m; sourceTree = "<group>"; };
+		18A017942242176B005A0574 /* WKPaymentDetailTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymentDetailTwoCell.xib; sourceTree = "<group>"; };
+		18A01797224227BA005A0574 /* WKSetUpPINCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKSetUpPINCell.h; sourceTree = "<group>"; };
+		18A01798224227BA005A0574 /* WKSetUpPINCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKSetUpPINCell.m; sourceTree = "<group>"; };
+		18A01799224227BA005A0574 /* WKSetUpPINCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKSetUpPINCell.xib; sourceTree = "<group>"; };
+		18A0179C22423792005A0574 /* WKPayDetailCrossBorderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPayDetailCrossBorderCell.h; sourceTree = "<group>"; };
+		18A0179D22423792005A0574 /* WKPayDetailCrossBorderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPayDetailCrossBorderCell.m; sourceTree = "<group>"; };
+		18A0179E22423792005A0574 /* WKPayDetailCrossBorderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPayDetailCrossBorderCell.xib; sourceTree = "<group>"; };
 		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1945,12 +1960,21 @@
 				18D071552238FFDD00B16840 /* WKPaymentDetailCell.h */,
 				18D071562238FFDD00B16840 /* WKPaymentDetailCell.m */,
 				18D071572238FFDD00B16840 /* WKPaymentDetailCell.xib */,
+				18A017922242176B005A0574 /* WKPaymentDetailTwoCell.h */,
+				18A017932242176B005A0574 /* WKPaymentDetailTwoCell.m */,
+				18A017942242176B005A0574 /* WKPaymentDetailTwoCell.xib */,
+				18A0179C22423792005A0574 /* WKPayDetailCrossBorderCell.h */,
+				18A0179D22423792005A0574 /* WKPayDetailCrossBorderCell.m */,
+				18A0179E22423792005A0574 /* WKPayDetailCrossBorderCell.xib */,
 				18D0715A223901E100B16840 /* WKPaymentMethodCell.h */,
 				18D0715B223901E100B16840 /* WKPaymentMethodCell.m */,
 				18D0715C223901E100B16840 /* WKPaymentMethodCell.xib */,
 				185736BF223F732300E02248 /* WKPaymentViewInputPINCell.h */,
 				185736C0223F732300E02248 /* WKPaymentViewInputPINCell.m */,
 				185736C1223F732300E02248 /* WKPaymentViewInputPINCell.xib */,
+				18A01797224227BA005A0574 /* WKSetUpPINCell.h */,
+				18A01798224227BA005A0574 /* WKSetUpPINCell.m */,
+				18A01799224227BA005A0574 /* WKSetUpPINCell.xib */,
 				185736CC223F7F4600E02248 /* WKPaymentingCell.h */,
 				185736CD223F7F4600E02248 /* WKPaymentingCell.m */,
 				185736CE223F7F4600E02248 /* WKPaymentingCell.xib */,
@@ -2111,6 +2135,7 @@
 				1857355F223F4B8900E02248 /* pdf_group_add_friends.pdf in Resources */,
 				1857361B223F4B8900E02248 /* pdf_selected_friend_enbled.pdf in Resources */,
 				185735F8223F4B8900E02248 /* pdf_malysia.pdf in Resources */,
+				18A017962242176B005A0574 /* WKPaymentDetailTwoCell.xib in Resources */,
 				185734BD223F4B8900E02248 /* pdf_camera_light_on.pdf in Resources */,
 				185735F2223F4B8900E02248 /* pdf_sgd_safe_loadanimator.pdf in Resources */,
 				185734B7223F4B8900E02248 /* pdf_high-five.pdf in Resources */,
@@ -2122,6 +2147,7 @@
 				1857369E223F4B8900E02248 /* pdf_redpacket_logo.pdf in Resources */,
 				185736B5223F4B8900E02248 /* pdf_game_Blizzarad.pdf in Resources */,
 				18573671223F4B8900E02248 /* pdf_im_friendList.pdf in Resources */,
+				18A0179B224227BA005A0574 /* WKSetUpPINCell.xib in Resources */,
 				185734D3223F4B8900E02248 /* pdf_enterremark.pdf in Resources */,
 				18573636223F4B8900E02248 /* Contact Card.pdf in Resources */,
 				185736AC223F4B8900E02248 /* pdf_selected_friend_unSelected.pdf in Resources */,
@@ -2333,6 +2359,7 @@
 				185734E9223F4B8900E02248 /* pdf_Refund.pdf in Resources */,
 				18573517223F4B8900E02248 /* pdf_redpacket_unread_bgk_left.pdf in Resources */,
 				18573565223F4B8900E02248 /* pdf_no_chats_empty_img.pdf in Resources */,
+				18A017A022423792005A0574 /* WKPayDetailCrossBorderCell.xib in Resources */,
 				185736A0223F4B8900E02248 /* PASSPORTbg.pdf in Resources */,
 				185736B7223F4B8900E02248 /* pdf_pass_code_unselect.pdf in Resources */,
 				1857366C223F4B8900E02248 /* pdf_alert_fail_circle.pdf in Resources */,
@@ -2636,6 +2663,7 @@
 				186FE87F223CD91A00CFE043 /* WKPaymentDefaultCell.m in Sources */,
 				18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */,
 				186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */,
+				18A0179F22423792005A0574 /* WKPayDetailCrossBorderCell.m in Sources */,
 				185736CA223F755100E02248 /* WKCustomCodeView.m in Sources */,
 				18D071472238F4E800B16840 /* SecondViewController.m in Sources */,
 				18D071182238F48600B16840 /* ViewController.m in Sources */,
@@ -2644,8 +2672,10 @@
 				186FE879223CCA5200CFE043 /* YHPDFImageDraw.m in Sources */,
 				186E0E22223A539F00B28C44 /* AGWindowView.m in Sources */,
 				186E0E25223A727100B28C44 /* WKPayTableView.m in Sources */,
+				18A0179A224227BA005A0574 /* WKSetUpPINCell.m in Sources */,
 				18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */,
 				186FE876223CCA5200CFE043 /* YHPDFImagePath.m in Sources */,
+				18A017952242176B005A0574 /* WKPaymentDetailTwoCell.m in Sources */,
 				18D071582238FFDD00B16840 /* WKPaymentDetailCell.m in Sources */,
 				186FE8BA223D12E600CFE043 /* WKPaymenMethodSubCell.m in Sources */,
 				186FE883223CDAC200CFE043 /* WKPaymentModel.m in Sources */,

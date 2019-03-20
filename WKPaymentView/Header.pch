@@ -28,7 +28,7 @@
 
 typedef enum : NSUInteger {
     ///默认类型
-    WKPaymentDefault = 0,
+    WKPaymentDefault =  0,
     ///支付详情类型
     WKPaymentDetail = 1,
     ///SPG类型
@@ -45,8 +45,15 @@ typedef enum : NSUInteger {
     WKPaymentInputPINCode = 7,
     ///设置支付密码
     WKSetPaymentPIN = 8,
+    ///确认设置支付密码
+    WKComfirmSetPaymentPIN = 9,
+    ///跨境支付/汇款类型
+    WKCrosBorderPayment = 10,
+    ///在线银行支付
+    WKOnlineBankPayment = 11,
+
     ///支付中类型
-    WKPaymenting = 9,
+    WKPaymenting = 12,
 } WKPaymentType;///支付类型
 
 typedef enum : NSUInteger {

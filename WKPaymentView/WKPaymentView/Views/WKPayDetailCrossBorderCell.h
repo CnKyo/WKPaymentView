@@ -1,8 +1,8 @@
 //
-//  WKPaymentDetailCell.h
+//  WKPayDetailCrossBorderCell.h
 //  WKPaymentView
 //
-//  Created by apple on 13/03/2019.
+//  Created by apple on 20/03/2019.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^WKPaymentDetailCellBtnClickBlock)(WKPaymentBtnModel mTag);
+typedef void(^WKPayDetailCrossBorderCellBtnClickBlock)(WKPaymentBtnModel mTag);
 
-@interface WKPaymentDetailCell : UITableViewCell
+@interface WKPayDetailCrossBorderCell : UITableViewCell
 
-@property (copy,nonatomic) WKPaymentDetailCellBtnClickBlock mBtnBlock;
+@property (copy,nonatomic) WKPayDetailCrossBorderCellBtnClickBlock mBtnBlock;
 
 /**
  左边的图片
@@ -40,6 +40,11 @@ typedef void(^WKPaymentDetailCellBtnClickBlock)(WKPaymentBtnModel mTag);
  类型内容
  */
 @property (weak, nonatomic) IBOutlet UILabel *mCategory;
+
+@property (weak, nonatomic) IBOutlet UILabel *mRateLb;
+
+@property (weak, nonatomic) IBOutlet UILabel *mRate;
+
 /**
  商家lb
  */
@@ -99,7 +104,6 @@ typedef void(^WKPaymentDetailCellBtnClickBlock)(WKPaymentBtnModel mTag);
  优惠卷线左边的约束(默认为0)
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mCouponLineLeft;
-
 @end
 
 NS_ASSUME_NONNULL_END

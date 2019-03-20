@@ -73,14 +73,14 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-Xj-S9Y">
-                        <rect key="frame" x="0.0" y="83" width="320" height="55"/>
+                        <rect key="frame" x="0.0" y="78" width="320" height="50"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="lBN-Xj-S9Y" secondAttribute="height" multiplier="64:11" id="Rvo-4o-txo"/>
+                            <constraint firstAttribute="width" secondItem="lBN-Xj-S9Y" secondAttribute="height" multiplier="32:5" id="Faa-uW-Faq"/>
                         </constraints>
                     </view>
                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBl-wn-2r5">
-                        <rect key="frame" x="0.0" y="143" width="320" height="30"/>
+                        <rect key="frame" x="0.0" y="133" width="320" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="nBl-wn-2r5" secondAttribute="height" multiplier="32:3" id="GYv-ri-d0N"/>
                         </constraints>
@@ -97,7 +97,7 @@
                     <constraint firstItem="Fqg-Ca-P8C" firstAttribute="top" secondItem="lG4-2D-xXt" secondAttribute="top" id="IVu-YC-T8N"/>
                     <constraint firstItem="lBN-Xj-S9Y" firstAttribute="leading" secondItem="Fqg-Ca-P8C" secondAttribute="leading" id="Puc-2v-JWE"/>
                     <constraint firstItem="nBl-wn-2r5" firstAttribute="trailing" secondItem="lBN-Xj-S9Y" secondAttribute="trailing" id="ZXO-hJ-NZX"/>
-                    <constraint firstItem="lBN-Xj-S9Y" firstAttribute="top" secondItem="Fqg-Ca-P8C" secondAttribute="bottom" constant="30" id="eq3-Pi-Sxm"/>
+                    <constraint firstItem="lBN-Xj-S9Y" firstAttribute="top" secondItem="Fqg-Ca-P8C" secondAttribute="bottom" constant="25" id="eq3-Pi-Sxm"/>
                     <constraint firstItem="nBl-wn-2r5" firstAttribute="top" secondItem="lBN-Xj-S9Y" secondAttribute="bottom" constant="5" id="fF5-2v-PWm"/>
                     <constraint firstItem="lBN-Xj-S9Y" firstAttribute="trailing" secondItem="Fqg-Ca-P8C" secondAttribute="trailing" id="lFI-L2-0Lw"/>
                     <constraint firstItem="Fqg-Ca-P8C" firstAttribute="leading" secondItem="lG4-2D-xXt" secondAttribute="leading" id="mFM-1a-5sh"/>

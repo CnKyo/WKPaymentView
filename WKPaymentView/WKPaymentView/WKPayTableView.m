@@ -12,6 +12,8 @@
 #import "WKPaymentMethodCell.h"
 #import "WKPaymentViewInputPINCell.h"
 #import "WKPaymentingCell.h"
+#import "WKSetUpPINCell.h"
+#import "WKPayDetailCrossBorderCell.h"
 #define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight   [[UIScreen mainScreen] bounds].size.height
 
@@ -48,6 +50,12 @@
     nib = [UINib nibWithNibName:@"WKPaymentingCell" bundle:nil];
     [view.mTableView registerNib:nib forCellReuseIdentifier:@"paymentLoadingCell"];
     
+    nib = [UINib nibWithNibName:@"WKSetUpPINCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"setPINCell"];
+    
+    nib = [UINib nibWithNibName:@"WKPayDetailCrossBorderCell" bundle:nil];
+    [view.mTableView registerNib:nib forCellReuseIdentifier:@"crosborderCell"];
+    
     view.mMethods = [NSMutableArray new];
 
     return view;
@@ -69,8 +77,8 @@
         WKPaymentDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.mBtnBlock = ^(WKPaymentBtnModel mIndex) {
-            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
-                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mIndex];
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:andType:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mIndex andType:self.mPayViewType];
             }
 
         };
@@ -95,8 +103,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
        
         cell.mBtnBlock = ^(WKPaymentBtnModel mTag) {
-            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
-                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag];
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:andType:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag andType:self.mPayViewType];
             }
         };
         cell.mInputPinBlock = ^(NSString * _Nonnull mPinText) {
@@ -116,11 +124,47 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.mBlock = ^(WKPaymentBtnModel mTag) {
-            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:)]) {
-                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag];
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:andType:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag andType:self.mPayViewType];
             }
         };
         [cell WKUpdateLoadingAnimat:mAnimatModel andMessage:self.messgae];
+        return cell;
+    }
+    else if (self.mPayViewType == WKSetPaymentPIN){
+        
+        string = @"setPINCell";
+        WKSetUpPINCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+     
+        cell.mBtnBlock = ^(WKPaymentBtnModel mTag) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:andType:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag andType:self.mPayViewType];
+            }
+        };
+        
+        cell.mInputPinBlock = ^(NSString * _Nonnull mPinText) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentPINCodeHandle:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentPINCodeHandle:mPinText];
+            }
+        };
+
+        return cell;
+    }
+    else if (self.mPayViewType == WKCrosBorderPayment){
+        
+        string = @"crosborderCell";
+        WKPayDetailCrossBorderCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        cell.mBtnBlock = ^(WKPaymentBtnModel mTag) {
+            if ([weakSelf.delegate respondsToSelector:@selector(WKPayTableViewPaymentDetailDidClicked:andType:)]) {
+                [weakSelf.delegate WKPayTableViewPaymentDetailDidClicked:mTag andType:self.mPayViewType];
+            }
+        };
+        
         return cell;
     }
     else{
@@ -200,5 +244,26 @@
     NSUserDefaults *animationModel = [NSUserDefaults standardUserDefaults];
     [animationModel setValue:[NSString stringWithFormat:@"%ld",mType] forKey:@"animationModel"];
     [self.mTableView reloadData];
+}
+
+/**
+ 显示汇款类型/跨境支付类型
+ 
+ @param model 支付数据模型
+ */
+- (void)WKShowCrosBorder:(WKPaymentModel *)model{
+    self.model = model;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKCrosBorderPayment] forKey:@"type"];
+    [self.mTableView reloadData];
+}
+
+#pragma mark----****----设置支付密码
+- (void)WKShowSetPINCode:(WKPaymentModel *)model{
+    self.model = model;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%ld",WKSetPaymentPIN] forKey:@"type"];
+    [self.mTableView reloadData];
+    
 }
 @end

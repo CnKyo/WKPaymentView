@@ -63,7 +63,6 @@
  @param VC 显示到当前ViewController
  */
 - (void)WKShowPaymentViewInVC:(UIViewController *)VC{
-//    [self WKAddNavMaskView];
     self.mMaskView.alpha = 0;
 
     CGRect mFrame = [UIApplication sharedApplication].keyWindow.bounds;
@@ -85,13 +84,6 @@
  */
 - (void)WKHiddenPaymentView:(BOOL)mHidden{
     self.hidden = mHidden;
-    if (mHidden) {
-        [self WKRemoveNavMaskView];
-    }else{
-        [self WKAddNavMaskView];
-        self.mNavMaskView.alpha = 1;
-    }
-    
 }
 /**
  移除支付view
@@ -105,7 +97,6 @@
         self.frame = mTotleFrame;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
-        [self WKRemoveNavMaskView];
     }];
 }
 - (void)loadDetail{
@@ -244,10 +235,10 @@
 
 
 #pragma mark----****----列表点击的代理方法
-- (void)WKPayTableViewPaymentDetailDidClicked:(WKPaymentBtnModel)mTag{
+- (void)WKPayTableViewPaymentDetailDidClicked:(WKPaymentBtnModel)mTag andType:(WKPaymentType)type{
 //    [self WKLeftToMid];
     if (self.WKPayDetailViewHandle) {
-        self.WKPayDetailViewHandle(mTag);
+        self.WKPayDetailViewHandle(mTag,type);
     }
     
 }
@@ -263,25 +254,11 @@
     }
 }
 
-#pragma mark----****----添加导航条蒙层view
-- (void)WKAddNavMaskView{
-    self.mNavMaskView = [UIView new];
-    self.mNavMaskView.frame = CGRectMake(0, 0, kScreenWidth, 44+kStatusBarHeight);
-    self.mNavMaskView.backgroundColor = self.mMaskView.backgroundColor;
-    self.mNavMaskView.alpha = 0;
-    [[UIApplication sharedApplication].keyWindow addSubview:self.mNavMaskView];
-}
-#pragma mark----****----移除导航条蒙层view
-- (void)WKRemoveNavMaskView{
-    [self.mNavMaskView removeFromSuperview];
-}
-
-
 #pragma mark----****----传递方法
 - (void)WKShowPaymentDetail:(WKPaymentModel *)model{
     
     [self WKMidToLeft];
-    [self.mMidPayTableView WKShowPaymentDetail:model];
+    [self.mLeftPayTableView WKShowPaymentDetail:model];
 }
 - (void)WKShowPaymentMethod:(WKPaymentModel *)model{
     
@@ -297,5 +274,18 @@
     [self WKMidToRight];
     [self.mRightPayTableView WKShowPaymentLoading:mType andMessage:message];
 }
-
+/**
+ 显示汇款类型/跨境支付类型
+ 
+ @param model 支付数据模型
+ */
+- (void)WKShowCrosBorder:(WKPaymentModel *)model{
+    [self WKMidToLeft];
+    [self.mLeftPayTableView WKShowCrosBorder:model];
+}
+#pragma mark----****----设置支付密码
+- (void)WKShowSetPINCode:(WKPaymentModel *)model{
+    [self WKMidToLeft];
+    [self.mLeftPayTableView WKShowSetPINCode:model];
+}
 @end

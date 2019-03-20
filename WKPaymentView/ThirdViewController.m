@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"第三个界面";
+    self.title = @"优惠卷界面";
 }
 
 /*

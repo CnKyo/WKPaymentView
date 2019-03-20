@@ -15,6 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic) NSString *mLeftImage;
 @property (strong,nonatomic) UIColor *mGoPayBgkColor;
 @property (strong,nonatomic) NSString *mCategory;
+
+/**
+ 类型
+ */
+@property (assign,nonatomic) NSInteger mType;
+
 @end
 
 @interface WKPaymentMethodModel : NSObject
