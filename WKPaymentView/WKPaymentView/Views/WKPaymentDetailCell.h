@@ -100,6 +100,12 @@ typedef void(^WKPaymentDetailCellBtnClickBlock)(WKPaymentBtnModel mTag);
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mCouponLineLeft;
 
+/**
+ 支付模型数据
+ */
+@property (strong,nonatomic) WKPaymentModel *mPayModel;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

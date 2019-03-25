@@ -562,6 +562,7 @@
 		18A017A022423792005A0574 /* WKPayDetailCrossBorderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0179E22423792005A0574 /* WKPayDetailCrossBorderCell.xib */; };
 		18A017A42242522E005A0574 /* WKAddPaymentMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A017A22242522E005A0574 /* WKAddPaymentMethodCell.m */; };
 		18A017A52242522E005A0574 /* WKAddPaymentMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A017A32242522E005A0574 /* WKAddPaymentMethodCell.xib */; };
+		18BBFCEE22448ACF00880163 /* WKPaymentViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBFCED22448ACF00880163 /* WKPaymentViewManager.m */; };
 		18CF7509223B3EC600605958 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF7508223B3EC600605958 /* ThirdViewController.m */; };
 		18D071152238F48600B16840 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071142238F48600B16840 /* AppDelegate.m */; };
 		18D071182238F48600B16840 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D071172238F48600B16840 /* ViewController.m */; };
@@ -1177,6 +1178,8 @@
 		18A017A12242522E005A0574 /* WKAddPaymentMethodCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKAddPaymentMethodCell.h; sourceTree = "<group>"; };
 		18A017A22242522E005A0574 /* WKAddPaymentMethodCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKAddPaymentMethodCell.m; sourceTree = "<group>"; };
 		18A017A32242522E005A0574 /* WKAddPaymentMethodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKAddPaymentMethodCell.xib; sourceTree = "<group>"; };
+		18BBFCEC22448ACF00880163 /* WKPaymentViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentViewManager.h; sourceTree = "<group>"; };
+		18BBFCED22448ACF00880163 /* WKPaymentViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKPaymentViewManager.m; sourceTree = "<group>"; };
 		18CF7507223B3EC600605958 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		18CF7508223B3EC600605958 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		18D071102238F48600B16840 /* WKPaymentView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKPaymentView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1996,6 +1999,8 @@
 			children = (
 				186FE881223CDAC200CFE043 /* WKPaymentModel.h */,
 				186FE882223CDAC200CFE043 /* WKPaymentModel.m */,
+				18BBFCEC22448ACF00880163 /* WKPaymentViewManager.h */,
+				18BBFCED22448ACF00880163 /* WKPaymentViewManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2673,6 +2678,7 @@
 				186FE87F223CD91A00CFE043 /* WKPaymentDefaultCell.m in Sources */,
 				18D0715D223901E100B16840 /* WKPaymentMethodCell.m in Sources */,
 				186FE877223CCA5200CFE043 /* YHPDFImageLoader.m in Sources */,
+				18BBFCEE22448ACF00880163 /* WKPaymentViewManager.m in Sources */,
 				18A0179F22423792005A0574 /* WKPayDetailCrossBorderCell.m in Sources */,
 				185736CA223F755100E02248 /* WKCustomCodeView.m in Sources */,
 				18D071472238F4E800B16840 /* SecondViewController.m in Sources */,

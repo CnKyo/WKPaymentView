@@ -73,6 +73,11 @@
 
     static NSString *string = @"paymentDetailCell";
     if (self.mPayViewType == WKPaymentDetail) {
+        
+        NSUserDefaults *modelDef = [NSUserDefaults standardUserDefaults];
+        NSData *modelData = [modelDef objectForKey:@"model"];
+        self.model = [NSKeyedUnarchiver unarchiveObjectWithData:modelData];;
+
         string = @"paymentDetailCell";
         WKPaymentDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -82,6 +87,7 @@
             }
 
         };
+        [cell setMPayModel:self.model];
         return cell;
     }
     else if (self.mPayViewType == WKPaymentMethod){
@@ -118,6 +124,7 @@
         
         NSInteger mAnimatModel = [[[NSUserDefaults standardUserDefaults]valueForKey:@"animationModel"] integerValue];
 
+        self.messgae = [[NSUserDefaults standardUserDefaults]valueForKey:@"message"];
         
         string = @"paymentLoadingCell";
         WKPaymentingCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
@@ -189,8 +196,14 @@
 }
 #pragma mark----****----传递方法
 - (void)WKShowPaymentDetail:(WKPaymentModel *)model{
-    self.model = model;
- 
+    NSError *error;
+
+    NSData *modelData = [NSKeyedArchiver archivedDataWithRootObject:model requiringSecureCoding:YES error:&error];
+    
+    NSUserDefaults *modelDef = [NSUserDefaults standardUserDefaults];
+    [modelDef setObject:modelData forKey:@"model"];
+
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymentDetail] forKey:@"type"];
     
@@ -220,21 +233,21 @@
         self.mMethods = [NSMutableArray new];
     }
     [self.mMethods removeAllObjects];
-    for (NSUInteger i = 0; i<3; i++) {
+    for (NSUInteger i = 0; i<2; i++) {
         WKPaymentMethodModel *method = [WKPaymentMethodModel new];
         method.mTitle = dataSource[i];
         if (i==0) {
             method.selected = YES;
-            method.mType = WKPaymentMethodBankCardType;
+            method.mType = WKPaymentMethodBalanceType;
         }
-        else if (i == 1){
-            method.selected = NO;
-            method.mType = WKPaymentMethodOnlineBankType;
-
-        }
+//        else if (i == 1){
+//            method.selected = NO;
+//            method.mType = WKPaymentMethodOnlineBankType;
+//
+//        }
         else{
             method.selected = NO;
-            method.mType = WKPaymentMethodAddCardType;
+            method.mType = WKPaymentMethodBankCardType;
 
         }
         [self.mMethods addObject:method];
@@ -244,14 +257,16 @@
     [self.mTableView reloadData];
 }
 - (void)WKShowPaymentLoading:(ALLoadingViewResultType)mType andMessage:(NSString *)message{
-
-    self.messgae = message;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setValue:[NSString stringWithFormat:@"%ld",WKPaymenting] forKey:@"type"];
+    NSUserDefaults *mTypeDef = [NSUserDefaults standardUserDefaults];
+    [mTypeDef setValue:[NSString stringWithFormat:@"%ld",WKPaymenting] forKey:@"type"];
     
     NSUserDefaults *animationModel = [NSUserDefaults standardUserDefaults];
     [animationModel setValue:[NSString stringWithFormat:@"%ld",mType] forKey:@"animationModel"];
+    
+    NSUserDefaults *messageDef = [NSUserDefaults standardUserDefaults];
+    [messageDef setValue:message forKey:@"message"];
+    
     [self.mTableView reloadData];
 }
 

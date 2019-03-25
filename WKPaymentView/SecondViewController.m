@@ -7,10 +7,9 @@
 //
 
 #import "SecondViewController.h"
-#import "WKPaymentView.h"
 #import "ThirdViewController.h"
+#import "WKPaymentViewManager.h"
 @interface SecondViewController ()
-@property (strong,nonatomic) WKPaymentView *mPayView;
 @end
 
 @implementation SecondViewController
@@ -24,104 +23,39 @@
     
     __weak typeof(self) weakSelf = self;
     
-    self.mPayView = [WKPaymentView initView];
-    [self.mPayView WKShowPaymentViewInVC:self];
-
     WKPaymentModel *model = [WKPaymentModel new];
     model.mTitle = @"这是标题";
-//    [self.mPayView WKShowPaymentDetail:model];
-//    [self.mPayView WKShowSetPINCode:model];
-    [self.mPayView WKShowCrosBorder:model];
-
-    self.mPayView.WKPayDetailViewHandle = ^(WKPaymentBtnModel mTag,WKPaymentType mType) {
-      
-        switch (mTag) {
-            case WKPaymentGoPayModel:
-            {
-//                [weakSelf.mPayView WKRemovePaymentView];
-                [weakSelf.mPayView WKShowPaymentPIN:nil];
-
-            }
-                break;
-            case WKPaymentLeftImageModel:
-            {
-                [weakSelf.mPayView WKRemovePaymentView];
-            }
-                break;
-            case WKPaymentSelectPayMethodModel:
-            {
-                [weakSelf.mPayView WKShowPaymentMethod:nil];
-
-            }
-                break;
-            case WKPaymentSelectCouponModel:
-            {
-                [weakSelf.mPayView WKHiddenPaymentView:YES];
-                ThirdViewController *vc = [ThirdViewController new];
-                
-                vc.mBackBlock = ^{
-                    [weakSelf.mPayView WKHiddenPaymentView:NO];
-                };
-                
-                [weakSelf.navigationController pushViewController:vc animated:YES];
-            }
-                break;
-            default:
-                break;
-        }
-//        [weakSelf.mPayView WKHiddenPaymentView:YES];
-//
-//        ThirdViewController *vc = [ThirdViewController new];
-//
-//        vc.mBackBlock = ^{
-//            [weakSelf.mPayView WKHiddenPaymentView:NO];
-////            [weakSelf.mPayView WKRemovePaymentView];
-//        };
-//
-//        [weakSelf.navigationController pushViewController:vc animated:YES];
-        
-
-    };
-    self.mPayView.WKPayMethodViewHandle = ^(WKPaymentBtnModel mTag,WKPaymentMethodModel *mCurrentMethod) {
-        switch (mTag) {
-            case WKPaymentGoPayModel:
-            {
-//                [weakSelf.mPayView WKRemovePaymentView];
-                [weakSelf.mPayView WKShowPaymentDetail:nil];
-
-            }
-                break;
-            case WKPaymentLeftImageModel:
-            {
-                [weakSelf.mPayView WKShowPaymentDetail:nil];
-            }
-                break;
-            default:
-                break;
-        }
-    };
     
-    self.mPayView.WKPayPINCodeViewHandle = ^(NSString * _Nonnull mPINCode) {
-        NSLog(@"you are input:%@",mPINCode);
-        [weakSelf.mPayView WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"Verifying Payment…"];
-        
-        
-        [weakSelf performSelector:@selector(loadS) withObject:nil afterDelay:2];
-        
+    [[WKPaymentViewManager shareInstance] WKShowPaymentDetail:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+        if (mTag == WKPaymentSelectPayMethodModel) {
 
-    };
+            [[WKPaymentViewManager shareInstance] WKHiddenPaymentView:YES];
+            ThirdViewController *vc = [ThirdViewController new];
 
+            vc.mBackBlock = ^{
+                [[WKPaymentViewManager shareInstance] WKHiddenPaymentView:NO];
+            };
+
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }
+    }];
+    
+    //    [[WKPaymentViewManager shareInstance] WKShowCrosBorder:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+    //
+    //    }];
+    
+    //    [[WKPaymentViewManager shareInstance] WKShowPaymentPIN:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+    //
+    //    } andPinHandle:^(NSString * _Nonnull mPIN) {
+    //
+    //    }];
+    
+//    [[WKPaymentViewManager shareInstance] WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"这是消息" andModel:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+//        
+//    }];
+    
 }
 
-- (void)loadS{
-    [self.mPayView WKShowPaymentLoading:ALLoadingViewResultTypeSuccess andMessage:@"Successful!"];
-    [self performSelector:@selector(hiddenP) withObject:nil afterDelay:1.5];
-
-
-}
-- (void)hiddenP{
-    [self.mPayView WKRemovePaymentView];
-}
 /*
 #pragma mark - Navigation
 

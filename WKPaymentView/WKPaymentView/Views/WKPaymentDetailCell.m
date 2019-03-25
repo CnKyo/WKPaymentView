@@ -25,5 +25,10 @@
         self.mBtnBlock(sender.tag);
     }
 }
-
+-(void)setMPayModel:(WKPaymentModel *)mPayModel{
+    if (mPayModel.mTitle.length>0) {
+        self.mTitle.text = mPayModel.mTitle;
+    }
+    
+}
 @end
