@@ -2,8 +2,8 @@
 //  SecondViewController.m
 //  WKPaymentView
 //
-//  Created by apple on 13/03/2019.
-//  Copyright © 2019 apple. All rights reserved.
+//  Created by 王钶 on 13/03/2019.
+//  Copyright © 2019 王钶. All rights reserved.
 //
 
 #import "SecondViewController.h"
@@ -37,22 +37,23 @@
             };
 
             [weakSelf.navigationController pushViewController:vc animated:YES];
+        }else if (mTag == WKPaymentLeftImageModel){
+            [[WKPaymentViewManager shareInstance] WKRemovePaymentView];
+        }else if (mTag == WKPaymentGoPayModel){
+            [[WKPaymentViewManager shareInstance] WKShowPaymentPIN:model addViewController:weakSelf andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+               
+            } andPinHandle:^(NSString * _Nonnull mPIN) {
+                if (mPIN.length>=6) {
+                    [[WKPaymentViewManager shareInstance] WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"这是消息" andModel:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
+                        NSLog(@"you are clicked:%ld",mTag);
+                        if (mTag == WKPaymentLeftImageModel) {
+                            [[WKPaymentViewManager shareInstance] WKRemovePaymentView];
+                        }
+                    }];
+                }
+            }];
         }
     }];
-    
-    //    [[WKPaymentViewManager shareInstance] WKShowCrosBorder:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
-    //
-    //    }];
-    
-    //    [[WKPaymentViewManager shareInstance] WKShowPaymentPIN:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
-    //
-    //    } andPinHandle:^(NSString * _Nonnull mPIN) {
-    //
-    //    }];
-    
-//    [[WKPaymentViewManager shareInstance] WKShowPaymentLoading:ALLoadingViewResultTypeLoading andMessage:@"这是消息" andModel:model addViewController:self andHandle:^(WKPaymentBtnModel mTag, WKPaymentType mType) {
-//        
-//    }];
     
 }
 

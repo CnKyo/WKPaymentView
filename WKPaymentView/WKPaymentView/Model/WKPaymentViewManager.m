@@ -2,8 +2,8 @@
 //  WKPaymentViewManager.m
 //  WKPaymentView
 //
-//  Created by apple on 22/03/2019.
-//  Copyright © 2019 apple. All rights reserved.
+//  Created by 王钶 on 22/03/2019.
+//  Copyright © 2019 王钶. All rights reserved.
 //
 
 #import "WKPaymentViewManager.h"

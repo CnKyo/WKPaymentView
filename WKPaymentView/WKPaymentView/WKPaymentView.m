@@ -2,14 +2,12 @@
 //  WKPaymentView.m
 //  WKPaymentView
 //
-//  Created by apple on 13/03/2019.
-//  Copyright © 2019 apple. All rights reserved.
+//  Created by 王钶 on 13/03/2019.
+//  Copyright © 2019 王钶. All rights reserved.
 //
 
 #import "WKPaymentView.h"
 #import "WKPayTableView.h"
-
-#import "AGWindowView.h"
 
 #define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
 #define kScreenHeight   [[UIScreen mainScreen] bounds].size.height
@@ -63,6 +61,9 @@
  @param VC 显示到当前ViewController
  */
 - (void)WKShowPaymentViewInVC:(UIViewController *)VC{
+    if (self.superview) {///<-这一句代码很重要,为了防止多个方法嵌套加载,如果不这样写会导致无法加载视图
+        return;
+    }
     self.mMaskView.alpha = 0;
 
     CGRect mFrame = [UIApplication sharedApplication].keyWindow.bounds;
