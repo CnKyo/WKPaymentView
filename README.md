@@ -20,6 +20,10 @@
 3. xxxx
 
 #### 参与贡献
+1.感谢ALLoadingView作出的贡献
+2.感谢YHPDFImageLoader 加载PDF图片文件作出的贡献
+3.WKCustomCodeView目前还有一些小瑕疵(UI重复叠加的bug)希望大家能够指出demo不足,小弟感激不尽!
+
 
 1. Fork 本仓库
 2. 新建 Feat_xxx 分支
