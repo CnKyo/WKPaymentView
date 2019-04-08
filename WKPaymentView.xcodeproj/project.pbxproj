@@ -598,6 +598,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184220682248E1CD005FA554 /* WKPaymentHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKPaymentHeader.h; sourceTree = "<group>"; };
 		185732A5223F450F00E02248 /* WKPaymenMethodBankCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WKPaymenMethodBankCell.xib; sourceTree = "<group>"; };
 		185732A8223F4B8700E02248 /* pdf_transfer_right.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf_transfer_right.pdf; sourceTree = "<group>"; };
 		185732A9223F4B8700E02248 /* pdf_high-five.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "pdf_high-five.pdf"; sourceTree = "<group>"; };
@@ -1900,6 +1901,7 @@
 				18CF7507223B3EC600605958 /* ThirdViewController.h */,
 				18CF7508223B3EC600605958 /* ThirdViewController.m */,
 				186FE87B223CCBB000CFE043 /* Header.pch */,
+				184220682248E1CD005FA554 /* WKPaymentHeader.h */,
 				185736D1223F80DB00E02248 /* WKLoadingAnimatView */,
 				185736C4223F755100E02248 /* WKCustomCodeView */,
 				186FE866223CCA5200CFE043 /* YHPDFImageLoader */,
